@@ -95,3 +95,9 @@ iframe {
   width: 100%;
   height: 100%;
 }
+
+/* Stop nav bar ease-in-out annimation when page is reload */
+.resize-animation-stopper * {
+  transition: none !important;
+  animation: none !important;
+}

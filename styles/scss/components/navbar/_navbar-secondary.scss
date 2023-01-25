@@ -1,0 +1,45 @@
+.navbar--secondary {
+  z-index: 2;
+  position: fixed;
+  top: 4rem;
+  right: 0;
+
+  width: 0;
+  height: 100%;
+
+  background: linear-gradient(rgba(175, 175, 175, 0.7), rgba(255, 255, 255, 1) 1%);
+  box-shadow: none;
+  overflow: hidden;
+  transition: all 350ms ease-out;
+
+  &[data-visible='true'] {
+    width: calc(100% - 4.75rem);
+    box-shadow: 5px 10px 10px 10px rgba(175, 175, 175, 0.7);
+    transition: all 350ms ease-out;
+  }
+}
+
+.menu--toggler-secondary {
+  @include width-height(100%, 2rem);
+  @include transition($__transitionAll5);
+  margin: 3rem 2rem;
+
+  cursor: pointer;
+}
+
+.toggler-secondary-burger {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 2.5rem;
+
+  &::before {
+    content: url('../../../../assets/images/icon/navbar/burger.svg');
+    rotate: 90deg;
+    position: absolute;
+    left: 0;
+    width: 2rem;
+  }
+}

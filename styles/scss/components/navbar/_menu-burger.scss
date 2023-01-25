@@ -1,0 +1,69 @@
+.menu--toggler {
+  @extend %flex-center;
+
+  @include width-height(3.25rem, 4rem);
+  @include transition($__transitionAll5);
+
+  cursor: pointer;
+
+  &.burger--shadow-active {
+    box-shadow: inset 0px 0px 2px 1px $__primary_light;
+  }
+
+  &-burger {
+    @include width-height(20px, 2px);
+    display: inline-flex;
+    background-color: $__sub;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+
+    @include transition($__transitionAll5);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      @include width-height(20px, 2px);
+      background: $__sub;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+      @include transition($__transitionAll5);
+    }
+
+    &::before {
+      transform: translateY(8px);
+    }
+
+    &::after {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+/** Burger Animation  **/
+.menu--toggler.open {
+  background-color: transparent;
+
+  /*** remove the middle line burger ***/
+  .menu--toggler-burger {
+    transform: translateX(0);
+    background: transparent;
+    box-shadow: none;
+  }
+  /*** transform the burger to a X ***/
+  .menu--toggler-burger::before {
+    transform: rotate(45deg);
+  }
+
+  .menu--toggler-burger::after {
+    transform: rotate(-45deg);
+  }
+}
+
+/** Burger Animation END **/
+
+@media only screen and (min-width: 699px) {
+  .menu--toggler {
+    display: none;
+  }
+}

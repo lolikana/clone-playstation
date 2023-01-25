@@ -1,7 +1,23 @@
-@import 'reset';
-@import 'font';
-@import 'typography';
-@import 'responsive';
-@import 'color';
+/* Utils */
+@import './utils/variables';
+@import './utils/mixins';
 
-@import 'base';
+/* Base */
+@import './base/reset';
+@import './base/font';
+@import './base/typography';
+@import './base/responsive';
+@import './base/color';
+
+@import './base/base';
+
+/* UI */
+@import './ui/buttons';
+@import './ui/icons';
+
+/* Components */
+@import './components/header';
+@import './components/navbar/navbar';
+@import './components/navbar/navbar-primary';
+@import './components/navbar/navbar-secondary';
+@import './components/navbar/menu-burger';

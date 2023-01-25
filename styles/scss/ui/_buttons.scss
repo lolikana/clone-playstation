@@ -1,0 +1,21 @@
+.button {
+  width: fit-content;
+  font-size: 0.95rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.05rem;
+  font-weight: $__semibold;
+  padding: 0 0.75rem 0.2rem;
+  border-radius: 30px;
+
+  cursor: pointer;
+  transition: 250ms all ease-in-out;
+
+  &--blue {
+    color: $__main;
+    background-color: $__primary_light;
+
+    &:hover {
+      background-color: $__primary_dark;
+    }
+  }
+}
