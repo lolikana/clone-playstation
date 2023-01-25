@@ -22,12 +22,12 @@ function setPrimaryNav(set: boolean) {
   }
 }
 htmlSelect.addEventListener('click', e => {
-  const visibility = primaryNav.getAttribute('data-visible');
+  const visibilityNavPrimary = primaryNav.getAttribute('data-visible');
   const target = e.target as any;
 
-  if (menuBtn.contains(target) && visibility === 'false' && !menuOpen) {
+  if (menuBtn.contains(target) && visibilityNavPrimary === 'false' && !menuOpen) {
     setPrimaryNav(true);
-  } else if (!primaryNav.contains(target) && visibility === 'true') {
+  } else if (!primaryNav.contains(target) && visibilityNavPrimary === 'true') {
     setPrimaryNav(false);
   }
 
