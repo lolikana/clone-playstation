@@ -395,17 +395,23 @@ header {
   position: fixed;
   top: 4rem;
   right: 0;
-  width: 0;
   height: 100%;
-  background: linear-gradient(rgba(175, 175, 175, 0.7), rgb(255, 255, 255) 1%);
+  width: 0;
   box-shadow: none;
   overflow: hidden;
   transition: all 350ms ease-out;
 }
 .navbar--secondary[data-visible=true] {
   width: calc(100% - 4.75rem);
-  box-shadow: 5px 10px 10px 10px rgba(175, 175, 175, 0.7);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(rgba(175, 175, 175, 0.5), rgb(255, 255, 255) 1%);
+  box-shadow: -10px 0px 5px -5px rgba(175, 175, 175, 0.7);
   transition: all 350ms ease-out;
+}
+.navbar--secondary.hide {
+  width: 0;
+  box-shadow: none;
+  overflow: hidden;
 }
 
 .menu--toggler-secondary {
