@@ -1,6 +1,7 @@
 const htmlSelect = document.querySelector('html') as HTMLElement;
 /* Nav menu START */
 const menuBtn = document.querySelector('.menu--toggler') as HTMLDivElement;
+const menuBtnBurger = document.querySelector('.menu--toggler-burger') as HTMLDivElement;
 const primaryNav = document.querySelector('.navbar--primary') as HTMLDivElement;
 const linksNav = document.querySelector('.nav-links') as HTMLUListElement;
 const btnsLinkNav = document.querySelectorAll(
@@ -21,9 +22,12 @@ function setPrimaryNav(set: boolean) {
     menuBtn.classList.remove('open', 'burger--shadow-active');
   }
 }
+
 htmlSelect.addEventListener('click', e => {
   const visibilityNavPrimary = primaryNav.getAttribute('data-visible');
   const target = e.target as any;
+
+  console.log(target);
 
   if (menuBtn.contains(target) && visibilityNavPrimary === 'false' && !menuOpen) {
     setPrimaryNav(true);
@@ -33,7 +37,8 @@ htmlSelect.addEventListener('click', e => {
 
   /** remove active arrow */
   btnsLinkNav.forEach(btn => {
-    if (target !== btn) btn.classList.remove('active');
+    if (target !== btn && target !== menuBtn && target !== menuBtnBurger)
+      btn.classList.remove('active');
   });
 });
 

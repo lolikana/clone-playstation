@@ -1,6 +1,7 @@
 "use strict";
 const htmlSelect = document.querySelector('html');
 const menuBtn = document.querySelector('.menu--toggler');
+const menuBtnBurger = document.querySelector('.menu--toggler-burger');
 const primaryNav = document.querySelector('.navbar--primary');
 const linksNav = document.querySelector('.nav-links');
 const btnsLinkNav = document.querySelectorAll('.nav-link-btn');
@@ -19,6 +20,7 @@ function setPrimaryNav(set) {
 htmlSelect.addEventListener('click', e => {
     const visibilityNavPrimary = primaryNav.getAttribute('data-visible');
     const target = e.target;
+    console.log(target);
     if (menuBtn.contains(target) && visibilityNavPrimary === 'false' && !menuOpen) {
         setPrimaryNav(true);
     }
@@ -26,7 +28,7 @@ htmlSelect.addEventListener('click', e => {
         setPrimaryNav(false);
     }
     btnsLinkNav.forEach(btn => {
-        if (target !== btn)
+        if (target !== btn && target !== menuBtn && target !== menuBtnBurger)
             btn.classList.remove('active');
     });
 });
