@@ -425,7 +425,7 @@ header {
   -webkit-transition: all 500ms ease-in-out;
   -ms-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
-  margin: 0.75rem 0 3rem;
+  margin: 0.75rem 0 2rem;
   cursor: pointer;
   width: 100%;
   position: relative;
@@ -442,8 +442,14 @@ header {
   width: 2rem;
 }
 
-.secondary--section-list {
+.secondary--section-items, .secondary--section-links {
   flex: 1;
+}
+.secondary--section-items {
+  border-bottom: 1px solid rgb(175, 175, 175);
+}
+.secondary--section-links {
+  margin-top: 1rem;
 }
 
 .secondary--list-items {
@@ -481,6 +487,15 @@ header {
 .secondary--item-text::before {
   content: url("../../../../assets/images/icon/navbar-secondary/ps5.png");
   display: block;
+}
+
+.secondary--list-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.secondary--list-link:hover {
+  color: #0070cc;
 }
 
 .menu--toggler {
