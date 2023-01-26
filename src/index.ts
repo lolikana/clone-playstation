@@ -1,6 +1,7 @@
 const htmlSelect = document.querySelector('html') as HTMLElement;
 /* Nav menu START */
 const menuBtn = document.querySelector('.menu--toggler') as HTMLDivElement;
+const menuBtnBurger = document.querySelector('.menu--toggler-burger') as HTMLDivElement;
 const primaryNav = document.querySelector('.navbar--primary') as HTMLDivElement;
 const secondaryNav = document.querySelector('.navbar--secondary') as HTMLDivElement;
 const linksNav = document.querySelector('.nav-links') as HTMLUListElement;
@@ -33,6 +34,8 @@ htmlSelect.addEventListener('click', e => {
 
   if (target === secondaryNav || target === togglerBtnSecondaryNav) return;
 
+  console.log(target);
+
   if (menuBtn.contains(target) && visibilityNavPrimary === 'false' && !menuOpen) {
     setPrimaryNav(true);
     secondaryNav.classList.remove('hide');
@@ -43,7 +46,8 @@ htmlSelect.addEventListener('click', e => {
 
   /** remove active arrow */
   btnsLinkNav.forEach(btn => {
-    if (target !== btn) btn.classList.remove('active');
+    if (target !== btn && target !== menuBtn && target !== menuBtnBurger)
+      btn.classList.remove('active');
   });
 });
 
@@ -67,7 +71,11 @@ linksNav.addEventListener('click', (e: any) => {
   });
 });
 
-togglerBtnSecondaryNav.addEventListener('click', () =>
-  secondaryNav.setAttribute('data-visible', 'false')
-);
+togglerBtnSecondaryNav.addEventListener('click', () => {
+  secondaryNav.setAttribute('data-visible', 'false');
+  btnsLinkNav.forEach(btn => {
+    btn.classList.remove('active');
+    secondaryNav.classList.remove('hide');
+  });
+});
 /* Nav menu END */
