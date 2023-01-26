@@ -2,10 +2,14 @@ const htmlSelect = document.querySelector('html') as HTMLElement;
 /* Nav menu START */
 const menuBtn = document.querySelector('.menu--toggler') as HTMLDivElement;
 const primaryNav = document.querySelector('.navbar--primary') as HTMLDivElement;
+const secondaryNav = document.querySelector('.navbar--secondary') as HTMLDivElement;
 const linksNav = document.querySelector('.nav-links') as HTMLUListElement;
 const btnsLinkNav = document.querySelectorAll(
   '.nav-link-btn'
 ) as NodeListOf<HTMLButtonElement>;
+const togglerBtnSecondaryNav = document.querySelector(
+  '.navbar--secondary-toggler'
+) as HTMLButtonElement;
 
 /** Burger Menu **/
 let menuOpen = false;
@@ -21,14 +25,20 @@ function setPrimaryNav(set: boolean) {
     menuBtn.classList.remove('open', 'burger--shadow-active');
   }
 }
-htmlSelect.addEventListener('click', e => {
-  const visibility = primaryNav.getAttribute('data-visible');
-  const target = e.target as any;
 
-  if (menuBtn.contains(target) && visibility === 'false' && !menuOpen) {
+htmlSelect.addEventListener('click', e => {
+  const visibilityNavPrimary = primaryNav.getAttribute('data-visible');
+  const target = e.target as any;
+  console.log(target);
+
+  if (target === secondaryNav || target === togglerBtnSecondaryNav) return;
+
+  if (menuBtn.contains(target) && visibilityNavPrimary === 'false' && !menuOpen) {
     setPrimaryNav(true);
-  } else if (!primaryNav.contains(target) && visibility === 'true') {
+    secondaryNav.classList.remove('hide');
+  } else if (!primaryNav.contains(target) && visibilityNavPrimary === 'true') {
     setPrimaryNav(false);
+    secondaryNav.classList.add('hide');
   }
 
   /** remove active arrow */
@@ -43,11 +53,21 @@ linksNav.addEventListener('click', (e: any) => {
 
   if (clicked === null) return;
 
-  if (clicked.classList.contains('active')) return clicked.classList.remove('active');
+  if (clicked.classList.contains('active')) {
+    clicked.classList.remove('active');
+    secondaryNav.setAttribute('data-visible', 'false');
+    return;
+  }
 
   btnsLinkNav.forEach(btn => {
     btn.classList.remove('active');
     clicked.classList.add('active');
+    secondaryNav.classList.remove('hide');
+    secondaryNav.setAttribute('data-visible', 'true');
   });
 });
+
+togglerBtnSecondaryNav.addEventListener('click', () =>
+  secondaryNav.setAttribute('data-visible', 'false')
+);
 /* Nav menu END */

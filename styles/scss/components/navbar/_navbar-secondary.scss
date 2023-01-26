@@ -1,40 +1,42 @@
 .navbar--secondary {
-  z-index: 2;
+  font-family: $__body__font__bold_family;
+  z-index: 1002;
   position: fixed;
   top: 4rem;
   right: 0;
+  display: flex;
+  flex-direction: column;
 
   height: 100%;
 
   width: 0;
   box-shadow: none;
   overflow: hidden;
-  transition: all 350ms ease-out;
+  background: linear-gradient(rgba(175, 175, 175, 0.5), rgba(255, 255, 255, 1) 1%);
+  transition: all 350ms ease-in-out;
 
   &[data-visible='true'] {
     width: calc(100% - 4.75rem);
-    background: rgba(255, 255, 255, 1);
-    background: linear-gradient(rgba(175, 175, 175, 0.5), rgba(255, 255, 255, 1) 1%);
     box-shadow: -10px 0px 5px -5px rgba(175, 175, 175, 0.7);
-    transition: all 350ms ease-out;
+    transition: all 350ms ease-in-out;
+    padding: 2rem 1rem;
   }
 
   &.hide {
     width: 0;
+    padding: 0;
     box-shadow: none;
     overflow: hidden;
+    transition: all 350ms ease-in-out;
   }
 }
 
-.menu--toggler-secondary {
+.navbar--secondary-toggler {
   @include width-height(100%, 2rem);
   @include transition($__transitionAll5);
-  margin: 3rem 2rem;
+  margin: 0.75rem 0 3rem;
 
   cursor: pointer;
-}
-
-.toggler-secondary-burger {
   width: 100%;
   position: relative;
   display: flex;
@@ -48,5 +50,53 @@
     position: absolute;
     left: 0;
     width: 2rem;
+  }
+}
+
+.secondary--section-list {
+  flex: 1;
+}
+
+.secondary--list {
+  &-items {
+    font-size: 0.95rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  &-item {
+    flex-basis: 45%;
+    // height: 100%;
+    margin-bottom: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+  }
+}
+
+.secondary--item {
+  &-link {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+
+    &:hover {
+      box-shadow: 1px 2px 4px 1px rgba(175, 175, 175, 0.5);
+      border-radius: 6px;
+    }
+  }
+  &-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &::before {
+      content: url('../../../../assets/images/icon/navbar-secondary/ps5.png');
+      display: block;
+    }
   }
 }
