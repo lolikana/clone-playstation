@@ -1,3 +1,5 @@
+import { navSecondData } from './seeds/data';
+
 const htmlSelect = document.querySelector('html') as HTMLElement;
 /* Nav menu START */
 const menuBtn = document.querySelector('.menu--toggler') as HTMLDivElement;
@@ -11,6 +13,8 @@ const btnsLinkNav = document.querySelectorAll(
 const togglerBtnSecondaryNav = document.querySelector(
   '.navbar--secondary-toggler'
 ) as HTMLButtonElement;
+
+console.log(navSecondData);
 
 /** Burger Menu **/
 let menuOpen = false;
