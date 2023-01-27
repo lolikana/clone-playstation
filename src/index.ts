@@ -30,18 +30,15 @@ function setPrimaryNav(set: boolean) {
 htmlSelect.addEventListener('click', e => {
   const visibilityNavPrimary = primaryNav.getAttribute('data-visible');
   const target = e.target as any;
-  console.log(target);
 
   if (target === secondaryNav || target === togglerBtnSecondaryNav) return;
-
-  console.log(target);
 
   if (menuBtn.contains(target) && visibilityNavPrimary === 'false' && !menuOpen) {
     setPrimaryNav(true);
     secondaryNav.classList.remove('hide');
   } else if (!primaryNav.contains(target) && visibilityNavPrimary === 'true') {
     setPrimaryNav(false);
-    secondaryNav.classList.add('hide');
+    secondaryNav.setAttribute('data-visible', 'false');
   }
 
   /** remove active arrow */
@@ -60,7 +57,9 @@ linksNav.addEventListener('click', (e: any) => {
   if (clicked.classList.contains('active')) {
     clicked.classList.remove('active');
     secondaryNav.setAttribute('data-visible', 'false');
-    setPrimaryNav(false);
+    if (window.innerWidth >= 700) {
+      setPrimaryNav(false);
+    }
     return;
   }
 

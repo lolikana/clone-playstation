@@ -22,17 +22,15 @@ function setPrimaryNav(set) {
 htmlSelect.addEventListener('click', e => {
     const visibilityNavPrimary = primaryNav.getAttribute('data-visible');
     const target = e.target;
-    console.log(target);
     if (target === secondaryNav || target === togglerBtnSecondaryNav)
         return;
-    console.log(target);
     if (menuBtn.contains(target) && visibilityNavPrimary === 'false' && !menuOpen) {
         setPrimaryNav(true);
         secondaryNav.classList.remove('hide');
     }
     else if (!primaryNav.contains(target) && visibilityNavPrimary === 'true') {
         setPrimaryNav(false);
-        secondaryNav.classList.add('hide');
+        secondaryNav.setAttribute('data-visible', 'false');
     }
     btnsLinkNav.forEach(btn => {
         if (target !== btn && target !== menuBtn && target !== menuBtnBurger)
@@ -46,7 +44,9 @@ linksNav.addEventListener('click', (e) => {
     if (clicked.classList.contains('active')) {
         clicked.classList.remove('active');
         secondaryNav.setAttribute('data-visible', 'false');
-        setPrimaryNav(false);
+        if (window.innerWidth >= 700) {
+            setPrimaryNav(false);
+        }
         return;
     }
     btnsLinkNav.forEach(btn => {
