@@ -321,10 +321,10 @@ header {
     height: 1.25rem;
     transition: transform 350ms ease-out;
   }
-  .navbar--primary .nav-links .nav-link-btn:hover, .navbar--primary .nav-links .nav-link-btn:focus {
+  .navbar--primary .nav-links .nav-link-btn:hover, .navbar--primary .nav-links .nav-link-btn:focus, .navbar--primary .nav-links .nav-link-btn.active {
     color: #0070cc;
   }
-  .navbar--primary .nav-links .nav-link-btn:hover::after, .navbar--primary .nav-links .nav-link-btn:focus::after {
+  .navbar--primary .nav-links .nav-link-btn:hover::after, .navbar--primary .nav-links .nav-link-btn:focus::after, .navbar--primary .nav-links .nav-link-btn.active::after {
     content: "";
   }
   .navbar--primary .nav-links .nav-link-btn.active::after {

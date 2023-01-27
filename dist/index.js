@@ -46,6 +46,7 @@ linksNav.addEventListener('click', (e) => {
     if (clicked.classList.contains('active')) {
         clicked.classList.remove('active');
         secondaryNav.setAttribute('data-visible', 'false');
+        setPrimaryNav(false);
         return;
     }
     btnsLinkNav.forEach(btn => {
@@ -53,6 +54,7 @@ linksNav.addEventListener('click', (e) => {
         clicked.classList.add('active');
         secondaryNav.classList.remove('hide');
         secondaryNav.setAttribute('data-visible', 'true');
+        setPrimaryNav(true);
     });
 });
 togglerBtnSecondaryNav.addEventListener('click', () => {

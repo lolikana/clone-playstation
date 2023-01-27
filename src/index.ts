@@ -60,6 +60,7 @@ linksNav.addEventListener('click', (e: any) => {
   if (clicked.classList.contains('active')) {
     clicked.classList.remove('active');
     secondaryNav.setAttribute('data-visible', 'false');
+    setPrimaryNav(false);
     return;
   }
 
@@ -68,6 +69,7 @@ linksNav.addEventListener('click', (e: any) => {
     clicked.classList.add('active');
     secondaryNav.classList.remove('hide');
     secondaryNav.setAttribute('data-visible', 'true');
+    setPrimaryNav(true);
   });
 });
 
