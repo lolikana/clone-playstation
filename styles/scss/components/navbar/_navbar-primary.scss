@@ -1,5 +1,5 @@
 @media (max-width: 699px) {
-  .navbar--primary {
+  .navbar--primary-container {
     z-index: 1001;
     position: fixed;
     top: 4rem;
@@ -19,13 +19,12 @@
     .nav-links {
       position: relative;
       margin-top: 2rem;
+
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
 
       .nav-link {
-        font-family: $__body__font__bold_family;
-
         &-btn {
           width: 100%;
           position: relative;
@@ -66,7 +65,7 @@
 }
 
 @media only screen and (min-width: 700px) {
-  .navbar--primary {
+  .navbar--primary-container {
     margin-left: 4.5rem;
 
     .nav-links {
@@ -76,7 +75,6 @@
       gap: 0.3rem;
 
       .nav-link {
-        font-family: $__body__font__bold_family;
         font-size: 0.9rem;
 
         &-btn {
