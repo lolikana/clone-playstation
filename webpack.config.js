@@ -2,6 +2,7 @@
 const path = require('path');
 
 const config = {
+  watch: true,
   module: {
     rules: [
       {
@@ -17,7 +18,6 @@ const config = {
 };
 
 const fooConfig = {
-  watch: true,
   entry: './src/index.ts',
   ...config,
   resolve: {
@@ -28,24 +28,18 @@ const fooConfig = {
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, './'),
     compress: true,
     port: 4000
   }
 };
 
 const barConfig = {
-  watch: true,
   entry: './src/beforeLoading/index.ts',
   ...config,
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist/beforeLoading')
-  },
-  devServer: {
-    static: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 4000
   }
 };
 

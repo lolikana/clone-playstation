@@ -6,7 +6,7 @@ export interface INavSecondData {
     title: string;
   }[];
   links: {
-    src: string;
+    href: string;
     text: string;
   }[];
 }
