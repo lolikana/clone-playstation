@@ -387,6 +387,49 @@ nav {
   background-image: url("../../../assets/images/icon/navbar/support-filled-blue.svg");
 }
 
+.search--modal {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.search--modal-container {
+  position: relative;
+  height: 6rem;
+  padding: 1rem 0 1rem;
+  background-color: #ffffff;
+}
+
+.search--modal-toggler {
+  position: absolute;
+  left: 1rem;
+}
+
+.search--form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3rem;
+}
+.search--form-icon {
+  margin: 0.5rem;
+}
+.search--form-input {
+  flex: 1;
+  display: flex;
+}
+.search--form-select {
+  flex: 1;
+  font-size: 0.7rem;
+}
+.search--form-select:hover {
+  color: #0070cc;
+}
+
 .navbar--secondary {
   z-index: 1002;
   position: fixed;
