@@ -1,6 +1,4 @@
-.navbar--primary {
-  font-family: $__body__font__bold_family;
-
+.navbar {
   position: fixed;
   width: 100%;
   height: 4rem;
@@ -11,19 +9,20 @@
 
   background-color: $__main;
 
-  &-search {
+  &--primary-search {
     position: absolute;
     left: 4rem;
-    &-toggler {
-      > img {
-        width: 25px;
-        height: 25px;
-      }
-    }
   }
-  &-logo {
+  &--primary-logo {
     width: 40px;
     height: 30px;
+  }
+}
+
+.primary--search--toggler {
+  > img {
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -35,7 +34,7 @@
     }
     &-logo {
       position: absolute;
-      left: 1rem;
+      left: 1.5rem;
     }
     &-sign {
       margin-right: 2.25rem;

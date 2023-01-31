@@ -3,17 +3,17 @@ import { navSecondData } from './seeds/data';
 
 const htmlSelect = document.querySelector('html') as HTMLElement;
 /* Nav menu START */
+const navbar = document.querySelector('.navbar') as HTMLDivElement;
 const menuBtn = document.querySelector('.menu--toggler') as HTMLDivElement;
 const menuBtnBurger = document.querySelector('.menu--toggler-burger') as HTMLDivElement;
 /** Primary nav */
-const primaryNavContainer = document.querySelector(
-  '.navbar--primary-container'
-) as HTMLDivElement;
+const primaryNav = document.querySelector('.navbar--primary') as HTMLDivElement;
 const secondaryNav = document.querySelector('.navbar--secondary') as HTMLDivElement;
 const linksNav = document.querySelector('.nav-links') as HTMLUListElement;
 const btnsLinkNav = document.querySelectorAll(
   '.nav-link-btn'
 ) as NodeListOf<HTMLButtonElement>;
+const searchBar = document.querySelector('.navbar--search-icon') as HTMLImageElement;
 /** Second nav */
 const togglerBtnSecondaryNav = document.querySelector(
   '.navbar--secondary-toggler'
@@ -24,8 +24,8 @@ const ulListLinks = document.querySelector('.secondary--list-links') as HTMLULis
 /** Burger Menu **/
 let menuOpen = false;
 
-function setPrimaryNavContainer(set: boolean) {
-  primaryNavContainer.setAttribute('data-visible', `${set}`);
+function setPrimaryNav(set: boolean) {
+  primaryNav.setAttribute('data-visible', `${set}`);
   menuBtn.setAttribute('aria-expanded', `${set}`);
 
   menuOpen = set;
@@ -37,22 +37,38 @@ function setPrimaryNavContainer(set: boolean) {
 }
 
 htmlSelect.addEventListener('click', e => {
-  const visibilityNavPrimary = primaryNavContainer.getAttribute('data-visible');
+  const visibilityNavPrimary = primaryNav.getAttribute('data-visible');
   const target = e.target as any;
 
-  if (target === secondaryNav || target === togglerBtnSecondaryNav) return;
+  if (
+    target === primaryNav ||
+    target === secondaryNav ||
+    target === ulListItems ||
+    target === ulListLinks ||
+    target === togglerBtnSecondaryNav ||
+    target === searchBar
+  )
+    return;
 
   if (menuBtn.contains(target) && visibilityNavPrimary === 'false' && !menuOpen) {
-    setPrimaryNavContainer(true);
+    setPrimaryNav(true);
     secondaryNav.classList.remove('hide');
-  } else if (!primaryNavContainer.contains(target) && visibilityNavPrimary === 'true') {
-    setPrimaryNavContainer(false);
-    secondaryNav.setAttribute('data-visible', 'false');
+  } else if (!primaryNav.contains(target) && visibilityNavPrimary === 'true') {
+    setPrimaryNav(false);
+    if (window.innerWidth >= 700) {
+      secondaryNav.setAttribute('data-visible', 'false');
+    } else {
+      secondaryNav.classList.add('hide');
+    }
   }
-
-  /** remove active arrow primary nav: desktop */
+  console.log(target);
   btnsLinkNav.forEach(btn => {
-    if (target !== btn && target !== menuBtn && target !== menuBtnBurger)
+    if (
+      target !== navbar &&
+      target !== btn &&
+      target !== menuBtn &&
+      target !== menuBtnBurger
+    )
       btn.classList.remove('active');
   });
 });
@@ -60,14 +76,13 @@ htmlSelect.addEventListener('click', e => {
 /** display active arrow primary nav */
 linksNav.addEventListener('click', (e: any) => {
   const clicked = e.target.closest('.nav-link-btn');
-
   if (clicked === null) return;
 
   if (clicked.classList.contains('active')) {
     clicked.classList.remove('active');
     secondaryNav.setAttribute('data-visible', 'false');
     if (window.innerWidth >= 700) {
-      setPrimaryNavContainer(false);
+      setPrimaryNav(false);
     }
     return;
   }
@@ -77,7 +92,7 @@ linksNav.addEventListener('click', (e: any) => {
     clicked.classList.add('active');
     secondaryNav.classList.remove('hide');
     secondaryNav.setAttribute('data-visible', 'true');
-    setPrimaryNavContainer(true);
+    setPrimaryNav(true);
   });
 
   const data = navSecondData.filter(item => item.id === clicked.innerHTML);
@@ -99,9 +114,7 @@ const createSecondNavItem = (icon: string, title: string): HTMLLIElement => {
   const anchor = document.createElement('a');
   const img = document.createElement('img');
   const span = document.createElement('span');
-
   li.classList.add('secondary--list-item');
-
   anchor.href = '#';
   anchor.classList.add('secondary--item-link');
 
@@ -141,7 +154,6 @@ function createSecondaryElements(data: INavSecondData) {
   togglerBtnSecondaryNav.innerHTML = data.title;
 
   ulListItems.innerHTML = '';
-
   data.items.map(item => {
     ulListItems.appendChild(createSecondNavItem(item.icon, item.title));
   });
