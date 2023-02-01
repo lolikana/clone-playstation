@@ -399,13 +399,13 @@ nav {
 .search--modal-container {
   position: relative;
   height: 6rem;
-  padding: 1rem 0 1rem;
+  padding: 0.5rem 0 0;
+  color: #7e7e7e;
   background-color: #ffffff;
 }
 
 .search--modal-toggler {
-  position: absolute;
-  left: 1rem;
+  margin: 0.5rem 1rem;
 }
 
 .search--form {
@@ -413,7 +413,6 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 3rem;
 }
 .search--form-icon {
   margin: 0.5rem;
@@ -422,12 +421,88 @@ nav {
   flex: 1;
   display: flex;
 }
-.search--form-select {
-  flex: 1;
-  font-size: 0.7rem;
+.search--form-input > input {
+  font-family: "sst", Arial, sans-serif;
+  color: #363c3a;
 }
-.search--form-select:hover {
-  color: #0070cc;
+
+.search--form-input, .search--form-select {
+  flex: 1;
+}
+
+/* Custom select */
+.search--form-select {
+  padding-left: 4rem;
+  font-size: 0.8rem;
+}
+
+.search--select-placeholder {
+  text-align: start;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search--select-placeholder::after {
+  content: url("../../../assets/images/icon/navbar/expand_more.svg");
+  background-image: url("../../../assets/images/icon/navbar/expand_more-blue.svg");
+  position: absolute;
+  right: 0.2rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 350ms ease-out;
+}
+.search--select-placeholder.active {
+  box-shadow: 1px 2px 4px 1px rgba(175, 175, 175, 0.5);
+  color: #bdbdbd;
+}
+.search--select-placeholder.active::after {
+  transform: rotate(180deg);
+  transition: transform 350ms ease-out;
+}
+
+.search--select-placeholder,
+.search--dropdown {
+  width: 10rem;
+  height: 100%;
+}
+
+.search--select-placeholder,
+.search--select-label {
+  padding-left: 0.5rem;
+  background-color: #ffffff;
+}
+
+.search--dropdown {
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 350ms ease-out;
+}
+.search--dropdown.show {
+  height: 300%;
+  transition: all 350ms ease-out;
+}
+
+.search--select-options {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.search--select-option {
+  display: none;
+}
+.search--select-label {
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.search--select-label:hover {
+  background-color: #0070cc;
+  color: #ffffff;
 }
 
 .navbar--secondary {

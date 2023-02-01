@@ -51,15 +51,15 @@
 
           <div class="search--modal" data-visible="false">
             <div class="search--modal-container">
-              <button class="search--modal-toggler">
-                <img
-                  class="navbar--search-icon icons"
-                  src="assets/images/icon/navbar/navigate_before.svg"
-                  alt="search"
-                />
-              </button>
               <form action="" class="search--form">
                 <div class="search--form-input">
+                  <button type="button" class="search--modal-toggler">
+                    <img
+                      class="navbar--search-icon icons"
+                      src="assets/images/icon/navbar/navigate_before.svg"
+                      alt="search"
+                    />
+                  </button>
                   <button>
                     <img
                       class="search--form-icon icons"
@@ -75,10 +75,38 @@
                   />
                 </div>
                 <div class="search--form-select">
-                  <select name="search-select" id="search-select">
+                  <!-- <select name="search-select" id="search-select">
                     <option value="PlayStation.com">PlayStation.com</option>
                     <option value="PlayStation Store">PlayStation Store</option>
-                  </select>
+                  </select> -->
+                  <button type="button" class="search--select-placeholder">
+                    PlayStation.com
+                  </button>
+                  <div class="search--dropdown">
+                    <div class="search--select-options">
+                      <label class="search--select-label" for="select-playstation">
+                        <input
+                          type="radio"
+                          id="select-playstation"
+                          name="search--select-option"
+                          class="search--select-option"
+                          value="PlayStation.com"
+                          checked
+                        />
+                        PlayStation.com</label
+                      >
+                      <label class="search--select-label" for="select-playstation-plus">
+                        <input
+                          type="radio"
+                          id="select-playstation-plus"
+                          name="search--select-option"
+                          class="search--select-option"
+                          value="PlayStation Plus"
+                        />
+                        PlayStation Plus</label
+                      >
+                    </div>
+                  </div>
                 </div>
               </form>
             </div>

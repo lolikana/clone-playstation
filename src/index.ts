@@ -20,6 +20,14 @@ const togglerBtnSecondaryNav = document.querySelector(
 ) as HTMLButtonElement;
 const ulListItems = document.querySelector('.secondary--list-items') as HTMLUListElement;
 const ulListLinks = document.querySelector('.secondary--list-links') as HTMLUListElement;
+/** Search bar */
+const searchSelectPlaceholderBtn = document.querySelector(
+  '.search--select-placeholder'
+) as HTMLButtonElement;
+const searchDropdown = document.querySelector('.search--dropdown') as HTMLDivElement;
+const searchSelectInputs = document.querySelectorAll(
+  'input[name="search--select-option"]'
+) as NodeListOf<HTMLInputElement>;
 
 /** Burger Menu **/
 let menuOpen = false;
@@ -61,7 +69,7 @@ htmlSelect.addEventListener('click', e => {
       secondaryNav.classList.add('hide');
     }
   }
-  console.log(target);
+
   btnsLinkNav.forEach(btn => {
     if (
       target !== navbar &&
@@ -71,6 +79,12 @@ htmlSelect.addEventListener('click', e => {
     )
       btn.classList.remove('active');
   });
+
+  if (target !== searchSelectPlaceholderBtn) {
+    searchSelectPlaceholderBtn.classList.remove('active');
+    searchDropdown.classList.remove('show');
+    searchSelectPlaceholderBtn.innerHTML = searchSelectPlaceholder[0];
+  }
 });
 
 /** display active arrow primary nav */
@@ -108,7 +122,7 @@ togglerBtnSecondaryNav.addEventListener('click', () => {
   });
 });
 
-/** Create seconda nav element */
+/** Create second nav element */
 const createSecondNavItem = (icon: string, title: string): HTMLLIElement => {
   const li = document.createElement('li');
   const anchor = document.createElement('a');
@@ -164,4 +178,37 @@ function createSecondaryElements(data: INavSecondData) {
   });
 }
 
-/* Nav menu END */
+/* ----------- Nav menu END ----------- */
+
+/* ----------- Search bar ----------- */
+const searchSelectPlaceholder = ['PlayStation.com', 'Sites'];
+
+const selectSearchValue = () => {
+  const searchSelectInputChecked = document.querySelector(
+    'input[name="search--select-option"]:checked'
+  ) as HTMLInputElement;
+  const searchSelectValue = searchSelectInputChecked.value;
+
+  searchSelectPlaceholder.shift();
+  searchSelectPlaceholder.unshift(searchSelectValue);
+};
+
+searchSelectPlaceholderBtn.addEventListener('click', () => {
+  searchSelectPlaceholderBtn.classList.toggle('active');
+  searchDropdown.classList.toggle('show');
+
+  selectSearchValue();
+
+  if (searchSelectPlaceholderBtn.classList.contains('active')) {
+    searchSelectPlaceholderBtn.innerHTML = searchSelectPlaceholder[1];
+  } else {
+    searchSelectPlaceholderBtn.innerHTML = searchSelectPlaceholder[0];
+  }
+});
+
+searchSelectInputs.forEach(input =>
+  input.addEventListener('change', () => {
+    selectSearchValue();
+    searchSelectPlaceholderBtn.innerHTML = searchSelectPlaceholder[0];
+  })
+);
