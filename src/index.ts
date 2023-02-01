@@ -232,4 +232,10 @@ searchModalToggler.addEventListener('click', () => {
   searchModal.setAttribute('data-visible', 'false');
 });
 
+searchModal.addEventListener('click', e => {
+  const target = e.target;
+  if (searchModal !== target) return;
+  searchModal.setAttribute('data-visible', 'false');
+});
+
 /* ----------- Search bar END ----------- */

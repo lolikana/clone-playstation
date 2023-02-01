@@ -514,6 +514,61 @@ nav {
   color: #ffffff;
 }
 
+@media only screen and (min-width: 700px) {
+  .search--modal {
+    width: 0;
+    height: 100vh;
+    right: 0;
+    left: auto;
+  }
+  .search--modal .search--modal-container {
+    font-size: 1.25rem;
+    width: 0;
+    height: 0;
+    padding: 0;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transition: all 350ms ease-out;
+  }
+  .search--modal[data-visible=true] {
+    width: 100%;
+  }
+  .search--modal[data-visible=true] .search--modal-container {
+    width: 650px;
+    height: 4rem;
+    opacity: 1;
+    transition: all 350ms ease-out;
+  }
+  .search--modal-toggler {
+    display: none;
+  }
+  .search--form {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0;
+  }
+  .search--form-btn {
+    width: 4rem;
+    background-color: #0070cc;
+  }
+  .search--form-btn > img {
+    margin: auto;
+    filter: brightness(0) invert(1);
+  }
+  .search--form-input {
+    order: 2;
+    width: 100%;
+    flex-direction: row-reverse;
+  }
+  .search--form-select {
+    order: 1;
+    padding: 0;
+    flex: none;
+    font-size: 1rem;
+  }
+}
 .navbar--secondary {
   z-index: 1002;
   position: fixed;
