@@ -21,6 +21,13 @@ const togglerBtnSecondaryNav = document.querySelector(
 const ulListItems = document.querySelector('.secondary--list-items') as HTMLUListElement;
 const ulListLinks = document.querySelector('.secondary--list-links') as HTMLUListElement;
 /** Search bar */
+const searchBarToggler = document.querySelector(
+  '.primary--search-toggler'
+) as HTMLButtonElement;
+const searchModal = document.querySelector('.search--modal') as HTMLDivElement;
+const searchModalToggler = document.querySelector(
+  '.search--modal-toggler'
+) as HTMLButtonElement;
 const searchSelectPlaceholderBtn = document.querySelector(
   '.search--select-placeholder'
 ) as HTMLButtonElement;
@@ -183,7 +190,11 @@ function createSecondaryElements(data: INavSecondData) {
 
 /* ----------- Nav menu END ----------- */
 
-/* ----------- Search bar ----------- */
+/* ----------- Search bar START ----------- */
+searchBarToggler.addEventListener('click', () => {
+  searchModal.setAttribute('data-visible', 'true');
+});
+
 const searchSelectPlaceholder = ['PlayStation.com', 'Sites'];
 
 const selectSearchValue = () => {
@@ -216,3 +227,9 @@ searchSelectInputs.forEach(input =>
     searchTextInput.placeholder = `Search ${searchSelectPlaceholder[0]}`;
   })
 );
+
+searchModalToggler.addEventListener('click', () => {
+  searchModal.setAttribute('data-visible', 'false');
+});
+
+/* ----------- Search bar END ----------- */

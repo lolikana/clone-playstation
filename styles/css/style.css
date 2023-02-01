@@ -388,12 +388,19 @@ nav {
 }
 
 .search--modal {
-  width: 100vw;
-  height: 100vh;
+  z-index: 1005;
   position: absolute;
+  width: 100%;
+  height: 0;
   top: 0;
   left: 0;
+  overflow: hidden;
+  transition: all 350ms ease-in-out;
+}
+.search--modal[data-visible=true] {
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
+  transition: all 350ms ease-in-out;
 }
 
 .search--modal-container {
@@ -413,6 +420,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-right: 1rem;
 }
 .search--form-icon {
   margin: 0.5rem;
@@ -424,6 +432,7 @@ nav {
 .search--form-input > input {
   font-family: "sst", Arial, sans-serif;
   color: #363c3a;
+  width: 100%;
 }
 
 .search--form-input, .search--form-select {
