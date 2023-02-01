@@ -28,6 +28,9 @@ const searchDropdown = document.querySelector('.search--dropdown') as HTMLDivEle
 const searchSelectInputs = document.querySelectorAll(
   'input[name="search--select-option"]'
 ) as NodeListOf<HTMLInputElement>;
+const searchTextInput = document.querySelector(
+  'input[name="search-input"]'
+) as HTMLInputElement;
 
 /** Burger Menu **/
 let menuOpen = false;
@@ -210,5 +213,6 @@ searchSelectInputs.forEach(input =>
   input.addEventListener('change', () => {
     selectSearchValue();
     searchSelectPlaceholderBtn.innerHTML = searchSelectPlaceholder[0];
+    searchTextInput.placeholder = `Search ${searchSelectPlaceholder[0]}`;
   })
 );
