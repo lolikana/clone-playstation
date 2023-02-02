@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clone - Playstation</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="beforeLoading/index.js"></script>
+    <link rel="stylesheet" href="dist/style.css" />
+    <script src="dist/beforeLoading/index.js"></script>
   </head>
   <body>
     <header>
@@ -49,65 +49,6 @@
             </button>
           </div>
 
-          <div class="search--modal" data-visible="false">
-            <div class="search--modal-container">
-              <form action="" class="search--form">
-                <div class="search--form-input">
-                  <button type="button" class="search--modal-toggler">
-                    <img
-                      class="navbar--search-icon icons"
-                      src="assets/images/icon/navbar/navigate_before.svg"
-                      alt="search"
-                    />
-                  </button>
-                  <button class="search--form-btn">
-                    <img
-                      class="search--form-icon icons"
-                      src="assets/images/icon/navbar/search.svg"
-                      alt="search"
-                    />
-                  </button>
-                  <input
-                    type="text"
-                    name="search-input"
-                    id="search-input"
-                    placeholder="Search PlayStation.com"
-                  />
-                </div>
-                <div class="search--form-select">
-                  <button type="button" class="search--select-placeholder">
-                    PlayStation.com
-                  </button>
-                  <div class="search--dropdown">
-                    <div class="search--select-options">
-                      <label class="search--select-label" for="select-playstation">
-                        <input
-                          type="radio"
-                          id="select-playstation"
-                          name="search--select-option"
-                          class="search--select-option"
-                          value="PlayStation.com"
-                          checked
-                        />
-                        PlayStation.com</label
-                      >
-                      <label class="search--select-label" for="select-playstation-plus">
-                        <input
-                          type="radio"
-                          id="select-playstation-plus"
-                          name="search--select-option"
-                          class="search--select-option"
-                          value="PS Store"
-                        />
-                        PlayStation Store</label
-                      >
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-
           <div class="navbar--primary-logo">
             <a href="/">
               <img
@@ -133,6 +74,65 @@
             <ul class="secondary--list-links"></ul>
           </section>
         </div>
+
+        <div class="search--modal" data-visible="false">
+          <div class="search--modal-container">
+            <form action="" class="search--form">
+              <div class="search--form-input">
+                <button type="button" class="search--modal-toggler">
+                  <img
+                    class="navbar--search-icon icons"
+                    src="assets/images/icon/navbar/navigate_before.svg"
+                    alt="search"
+                  />
+                </button>
+                <button class="search--form-btn">
+                  <img
+                    class="search--form-icon icons"
+                    src="assets/images/icon/navbar/search.svg"
+                    alt="search"
+                  />
+                </button>
+                <input
+                  type="text"
+                  name="search-input"
+                  id="search-input"
+                  placeholder="Search PlayStation.com"
+                />
+              </div>
+              <div class="search--form-select">
+                <button type="button" class="search--select-placeholder">
+                  PlayStation.com
+                </button>
+                <div class="search--dropdown">
+                  <div class="search--select-options">
+                    <label class="search--select-label" for="select-playstation">
+                      <input
+                        type="radio"
+                        id="select-playstation"
+                        name="search--select-option"
+                        class="search--select-option"
+                        value="PlayStation.com"
+                        checked
+                      />
+                      PlayStation.com</label
+                    >
+                    <label class="search--select-label" for="select-playstation-plus">
+                      <input
+                        type="radio"
+                        id="select-playstation-plus"
+                        name="search--select-option"
+                        class="search--select-option"
+                        value="PS Store"
+                      />
+                      PlayStation Store</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </nav>
     </header>
     <main>
@@ -141,6 +141,6 @@
         alt=""
       />
     </main>
-    <script type="module" src="index.js"></script>
-<body>
+    <script type="module" src="dist/index.js"></script>
+  </body>
 </html>

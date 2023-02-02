@@ -57,14 +57,15 @@ function setPrimaryNav(set: boolean) {
 htmlSelect.addEventListener('click', e => {
   const visibilityNavPrimary = primaryNav.getAttribute('data-visible');
   const target = e.target as any;
-
+  console.log(target);
   if (
     target === primaryNav ||
     target === secondaryNav ||
     target === ulListItems ||
     target === ulListLinks ||
     target === togglerBtnSecondaryNav ||
-    target === searchBar
+    target === searchBar ||
+    target === searchModal
   )
     return;
 

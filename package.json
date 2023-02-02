@@ -10,7 +10,7 @@
     "lint": "eslint --fix -f table './**/*.ts'",
     "lint-staged": "lint-staged",
     "sass": "node-sass -w scss -o dist",
-    "prettier-format": "prettier --config .prettierrc './**/*.{ts,scss,json, html}' --write",
+    "prettier-format": "prettier --config .prettierrc './**/*.{ts,scss,json,html}' --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {

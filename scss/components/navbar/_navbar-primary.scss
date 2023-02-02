@@ -34,8 +34,8 @@
           padding: 1rem 0 1rem 4.75rem;
 
           &::after {
-            content: url('../../../assets/images/icon/navbar/navigate_next.svg');
-            background-image: url('../../../assets/images/icon/navbar/navigate_next-blue.svg');
+            content: url('../assets/images/icon/navbar/navigate_next.svg');
+            background-image: url('../assets/images/icon/navbar/navigate_next-blue.svg');
             width: 1.25rem;
             height: 1.25rem;
             position: absolute;
@@ -90,8 +90,8 @@
           }
           /** display arrow **/
           &::after {
-            content: url('../../../assets/images/icon/navbar/expand_more.svg');
-            background-image: url('../../../assets/images/icon/navbar/expand_more-blue.svg');
+            content: url('../assets/images/icon/navbar/expand_more.svg');
+            background-image: url('../assets/images/icon/navbar/expand_more-blue.svg');
             position: absolute;
             top: 0.175rem;
             right: 0;
@@ -132,62 +132,62 @@
 .nav-link-btn {
   &.btn-games {
     &::before {
-      content: url('../../../assets/images/icon/navbar/games.svg');
-      background-image: url('../../../assets/images/icon/navbar/games-blue.svg');
+      content: url('../assets/images/icon/navbar/games.svg');
+      background-image: url('../assets/images/icon/navbar/games-blue.svg');
     }
     &.active::before {
       content: '';
-      background-image: url('../../../assets/images/icon/navbar/games-filled-blue.svg');
+      background-image: url('../assets/images/icon/navbar/games-filled-blue.svg');
     }
   }
   &.btn-hardware {
     &::before {
-      content: url('../../../assets/images/icon/navbar/hardware.svg');
-      background-image: url('../../../assets/images/icon/navbar/hardware-blue.svg');
+      content: url('../assets/images/icon/navbar/hardware.svg');
+      background-image: url('../assets/images/icon/navbar/hardware-blue.svg');
     }
     &.active::before {
       content: '';
-      background-image: url('../../../assets/images/icon/navbar/hardware-filled-blue.svg');
+      background-image: url('../assets/images/icon/navbar/hardware-filled-blue.svg');
     }
   }
   &.btn-services {
     &::before {
-      content: url('../../../assets/images/icon/navbar/services.svg');
-      background-image: url('../../../assets/images/icon/navbar/services-blue.svg');
+      content: url('../assets/images/icon/navbar/services.svg');
+      background-image: url('../assets/images/icon/navbar/services-blue.svg');
     }
     &.active::before {
       content: '';
-      background-image: url('../../../assets/images/icon/navbar/services-filled-blue.svg');
+      background-image: url('../assets/images/icon/navbar/services-filled-blue.svg');
     }
   }
   &.btn-news {
     &::before {
-      content: url('../../../assets/images/icon/navbar/news.svg');
-      background-image: url('../../../assets/images/icon/navbar/news-blue.svg');
+      content: url('../assets/images/icon/navbar/news.svg');
+      background-image: url('../assets/images/icon/navbar/news-blue.svg');
     }
     &.active::before {
       content: '';
-      background-image: url('../../../assets/images/icon/navbar/news-filled-blue.svg');
+      background-image: url('../assets/images/icon/navbar/news-filled-blue.svg');
     }
   }
   &.btn-shop {
     &::before {
-      content: url('../../../assets/images/icon/navbar/shop.svg');
-      background-image: url('../../../assets/images/icon/navbar/shop-blue.svg');
+      content: url('../assets/images/icon/navbar/shop.svg');
+      background-image: url('../assets/images/icon/navbar/shop-blue.svg');
     }
     &.active::before {
       content: '';
-      background-image: url('../../../assets/images/icon/navbar/shop-filled-blue.svg');
+      background-image: url('../assets/images/icon/navbar/shop-filled-blue.svg');
     }
   }
   &.btn-support {
     &::before {
-      content: url('../../../assets/images/icon/navbar/support.svg');
-      background-image: url('../../../assets/images/icon/navbar/support-blue.svg');
+      content: url('../assets/images/icon/navbar/support.svg');
+      background-image: url('../assets/images/icon/navbar/support-blue.svg');
     }
     &.active::before {
       content: '';
-      background-image: url('../../../assets/images/icon/navbar/support-filled-blue.svg');
+      background-image: url('../assets/images/icon/navbar/support-filled-blue.svg');
     }
   }
 }
