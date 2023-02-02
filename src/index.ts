@@ -237,5 +237,4 @@ searchModal.addEventListener('click', e => {
   if (searchModal !== target) return;
   searchModal.setAttribute('data-visible', 'false');
 });
-
 /* ----------- Search bar END ----------- */

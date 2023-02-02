@@ -25,10 +25,11 @@ const fooConfig = {
   },
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    clean: true
   },
   devServer: {
-    static: path.join(__dirname, './'),
+    static: path.join(__dirname, './dist'),
     compress: true,
     port: 4000
   }
@@ -39,7 +40,8 @@ const barConfig = {
   ...config,
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'dist/beforeLoading')
+    path: path.resolve(__dirname, 'dist/beforeLoading'),
+    clean: true
   }
 };
 
