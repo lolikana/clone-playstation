@@ -58,13 +58,13 @@
   background: linear-gradient(rgba(175, 175, 175, 0.5), rgba(255, 255, 255, 1) 1%);
   box-shadow: none;
   overflow: hidden;
-  transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in;
 
   &[data-visible='true'] {
     padding: 2rem 1rem 1rem 1rem;
     width: calc(100% - 4.75rem);
     box-shadow: -10px 0px 5px -5px rgba(175, 175, 175, 0.7);
-    transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in;
   }
 }
 
