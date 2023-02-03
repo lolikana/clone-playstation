@@ -1,7 +1,24 @@
-header {
-  height: 4rem;
-}
-
 nav {
   font-family: $__body__font__bold_family;
+  &.sticky {
+    position: sticky;
+    top: 0;
+  }
+}
+.header--sony {
+  display: none;
+}
+@media only screen and (min-width: 700px) {
+  .header--sony {
+    height: 2rem;
+    background-color: #000;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 0.5rem;
+    &-logo {
+      width: fit-content;
+      height: 0.75rem;
+    }
+  }
 }
