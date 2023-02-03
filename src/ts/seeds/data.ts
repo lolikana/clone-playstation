@@ -1,4 +1,17 @@
 import { INavSecondData } from '../libs/types';
+import PS5Icon from '../../assets/images/icon/navbar-secondary/ps5.png';
+import PS4Icon from '../../assets/images/icon/navbar-secondary/ps4.png';
+import PS4PropIcon from '../../assets/images/icon/navbar-secondary/ps4-pro.png';
+import PSVRIcon from '../../assets/images/icon/navbar-secondary/ps-vr.png';
+import PSVR2Icon from '../../assets/images/icon/navbar-secondary/ps-vr2.png';
+import PSPlusIcon from '../../assets/images/icon/navbar-secondary/ps-plus.png';
+import ShopGameIcon from '../../assets/images/icon/navbar-secondary/shop-games.png';
+import PSStarsIcon from '../../assets/images/icon/navbar-secondary/ps-stars.png';
+import PSBlogIcon from '../../assets/images/icon/navbar-secondary/ps-blog.png';
+import PSBlogMonthIcon from '../../assets/images/icon/navbar-secondary/ps-blog-month.png';
+import ShopOffIcon from '../../assets/images/icon/navbar-secondary/shop-official.png';
+import SupportIcon from '../../assets/images/icon/navbar-secondary/ps-support.png';
+import PSNIcon from '../../assets/images/icon/navbar-secondary/ps-psn.png';
 
 export const navSecondData: INavSecondData[] = [
   {
@@ -6,23 +19,23 @@ export const navSecondData: INavSecondData[] = [
     title: 'Games',
     items: [
       {
-        icon: 'ps5.png',
+        icon: PS5Icon,
         title: 'PS5'
       },
       {
-        icon: 'ps4.png',
+        icon: PS4Icon,
         title: 'PS4'
       },
       {
-        icon: 'ps-vr.png',
+        icon: PSVRIcon,
         title: 'PS VR'
       },
       {
-        icon: 'ps-plus.png',
+        icon: PSPlusIcon,
         title: 'PS Plus'
       },
       {
-        icon: 'shop-games.png',
+        icon: ShopGameIcon,
         title: 'Buy Games'
       }
     ],
@@ -54,19 +67,19 @@ export const navSecondData: INavSecondData[] = [
     title: 'Hardware',
     items: [
       {
-        icon: 'ps5.png',
+        icon: PS5Icon,
         title: 'PS5'
       },
       {
-        icon: 'ps4.png',
+        icon: PS4Icon,
         title: 'PS4'
       },
       {
-        icon: 'ps4-pro.png',
+        icon: PS4PropIcon,
         title: 'PS4 Pro'
       },
       {
-        icon: 'ps-vr2.png',
+        icon: PSVR2Icon,
         title: 'PS VR2'
       }
     ],
@@ -98,11 +111,11 @@ export const navSecondData: INavSecondData[] = [
     title: 'Services',
     items: [
       {
-        icon: 'ps-plus.png',
+        icon: PSPlusIcon,
         title: 'PS Plus'
       },
       {
-        icon: 'ps-stars.png',
+        icon: PSStarsIcon,
         title: 'PS Stars'
       }
     ],
@@ -122,11 +135,11 @@ export const navSecondData: INavSecondData[] = [
     title: 'News',
     items: [
       {
-        icon: 'ps-blog.png',
+        icon: PSBlogIcon,
         title: 'PS Blog'
       },
       {
-        icon: 'ps-blog-month.png',
+        icon: PSBlogMonthIcon,
         title: 'This Month on Playstation'
       }
     ],
@@ -150,15 +163,15 @@ export const navSecondData: INavSecondData[] = [
     title: 'Shop',
     items: [
       {
-        icon: 'ps4-pro.png',
+        icon: PS4PropIcon,
         title: 'Hardware and Discs'
       },
       {
-        icon: 'shop-games.png',
+        icon: ShopGameIcon,
         title: 'Digital Games and Services'
       },
       {
-        icon: 'shop-official.png',
+        icon: ShopOffIcon,
         title: 'Official Merchandise'
       }
     ],
@@ -190,11 +203,11 @@ export const navSecondData: INavSecondData[] = [
     title: 'Support',
     items: [
       {
-        icon: 'ps-support.png',
+        icon: SupportIcon,
         title: 'Support'
       },
       {
-        icon: 'ps-psn.png',
+        icon: PSNIcon,
         title: 'PSN Status'
       }
     ],

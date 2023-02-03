@@ -1,48 +1,61 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const config = {
+module.exports = {
+  mode: 'development',
   watch: true,
+  devtool: 'inline-source-map',
+  entry: { main: './src/index.ts', '/js/index': './src/ts/beforeLoading/index.ts' },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+    assetModuleFilename: 'assets/[hash][ext][query]',
+    clean: true
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
+    new MiniCssExtractPlugin()
+  ],
   module: {
     rules: [
       {
-        test: /\.ts?$/,
+        test: /\.html$/,
+        use: 'html-loader'
+      },
+      {
+        test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
       }
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js']
-  }
-};
-
-const fooConfig = {
-  entry: './src/index.ts',
-  ...config,
-  resolve: {
-    extensions: ['.ts', '.js']
-  },
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true
+    extensions: ['.tsx', '.ts', '.js']
   },
   devServer: {
-    static: path.join(__dirname, './dist'),
+    static: './dist',
     compress: true,
     port: 4000
+  },
+  stats: {
+    errorDetails: true
   }
 };
-
-const barConfig = {
-  entry: './src/beforeLoading/index.ts',
-  ...config,
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist/beforeLoading'),
-    clean: true
-  }
-};
-
-module.exports = [fooConfig, barConfig];

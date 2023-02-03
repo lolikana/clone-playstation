@@ -1,5 +1,8 @@
-import { INavSecondData } from './libs/types';
-import { navSecondData } from './seeds/data';
+import './sass/style.scss';
+import * as _ from 'lodash';
+
+import { INavSecondData } from './ts/libs/types';
+import { navSecondData } from './ts/seeds/data';
 
 const htmlSelect = document.querySelector('html') as HTMLElement;
 /* Nav menu START */
@@ -144,7 +147,7 @@ const createSecondNavItem = (icon: string, title: string): HTMLLIElement => {
   anchor.classList.add('secondary--item-link');
 
   img.classList.add('secondary--item-img');
-  img.src = `../../../../assets/images/icon/navbar-secondary/${icon}`;
+  img.src = icon;
 
   span.classList.add('secondary--item-text');
   span.innerHTML = title;
