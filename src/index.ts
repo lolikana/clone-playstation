@@ -74,6 +74,7 @@ function setPrimaryNav(set: boolean) {
 htmlSelect.addEventListener('click', e => {
   const visibilityNavPrimary = primaryNav.getAttribute('data-visible');
   const target = e.target as any;
+  // const currentTarget = e.currentTarget as any;
   console.log(target);
   if (
     target === primaryNav ||
@@ -240,9 +241,16 @@ searchModalToggler.addEventListener('click', () => {
   searchModal.setAttribute('data-visible', 'false');
 });
 
+function closeSearchModal() {
+  searchSelectPlaceholderBtn.classList.remove('active');
+  searchDropdown.classList.remove('show');
+  searchModal.setAttribute('data-visible', 'false');
+  searchSelectPlaceholderBtn.innerHTML = searchSelectPlaceholder[0];
+}
+
 searchModal.addEventListener('click', e => {
   const target = e.target;
   if (searchModal !== target) return;
-  searchModal.setAttribute('data-visible', 'false');
+  closeSearchModal();
 });
 /* ----------- Search bar END ----------- */
