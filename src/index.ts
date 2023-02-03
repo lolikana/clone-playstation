@@ -8,7 +8,6 @@ const htmlSelect = document.querySelector('html') as HTMLElement;
 /* Nav menu START */
 const navbar = document.querySelector('.navbar') as HTMLDivElement;
 const menuBtn = document.querySelector('.menu--toggler') as HTMLDivElement;
-const menuBtnBurger = document.querySelector('.menu--toggler-burger') as HTMLDivElement;
 /** Primary nav */
 const primaryNav = document.querySelector('.navbar--primary') as HTMLDivElement;
 const secondaryNav = document.querySelector('.navbar--secondary') as HTMLDivElement;
@@ -74,25 +73,16 @@ htmlSelect.addEventListener('click', e => {
 
   if (menuBtn.contains(target) && visibilityNavPrimary === 'false' && !menuOpen) {
     setPrimaryNav(true);
-    secondaryNav.classList.remove('hide');
-  } else if (!primaryNav.contains(target) && visibilityNavPrimary === 'true') {
+  } else if (
+    (!primaryNav.contains(target) && visibilityNavPrimary === 'true') ||
+    target === navbar
+  ) {
     setPrimaryNav(false);
-    if (window.innerWidth >= 700) {
-      secondaryNav.setAttribute('data-visible', 'false');
-    } else {
-      secondaryNav.classList.add('hide');
-    }
-  }
-
-  btnsLinkNav.forEach(btn => {
-    if (
-      target !== navbar &&
-      target !== btn &&
-      target !== menuBtn &&
-      target !== menuBtnBurger
-    )
+    secondaryNav.setAttribute('data-visible', 'false');
+    btnsLinkNav.forEach(btn => {
       btn.classList.remove('active');
-  });
+    });
+  }
 
   if (target !== searchSelectPlaceholderBtn) {
     searchSelectPlaceholderBtn.classList.remove('active');
@@ -118,7 +108,7 @@ linksNav.addEventListener('click', (e: any) => {
   btnsLinkNav.forEach(btn => {
     btn.classList.remove('active');
     clicked.classList.add('active');
-    secondaryNav.classList.remove('hide');
+
     secondaryNav.setAttribute('data-visible', 'true');
     setPrimaryNav(true);
   });
@@ -132,7 +122,6 @@ togglerBtnSecondaryNav.addEventListener('click', () => {
   secondaryNav.setAttribute('data-visible', 'false');
   btnsLinkNav.forEach(btn => {
     btn.classList.remove('active');
-    secondaryNav.classList.remove('hide');
   });
 });
 

@@ -7,12 +7,11 @@ module.exports = {
   mode: 'development',
   watch: true,
   devtool: 'inline-source-map',
-  entry: { main: './src/index.ts', '/js/index': './src/ts/beforeLoading/index.ts' },
+  entry: { main: './src/index.ts', '/js/index': './src/ts/beforeLoading/resize.ts' },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    assetModuleFilename: 'assets/[hash][ext][query]',
-    clean: true
+    assetModuleFilename: 'assets/[hash][ext][query]'
   },
   plugins: [
     new HtmlWebpackPlugin({
