@@ -129,6 +129,7 @@ linksNav.addEventListener('click', (e: any) => {
     setPrimaryNav(true);
   });
 
+  /*** display second nav bar data on click primary nav btn ***/
   const data = navSecondData.filter(item => item.id === clicked.innerHTML);
   createSecondaryElements(data[0]);
 });

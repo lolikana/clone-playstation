@@ -19,3 +19,25 @@
     }
   }
 }
+
+.button--link {
+  font-family: Arial, Helvetica, sans-serif;
+  color: $__sub;
+  font-size: 0.8rem;
+  font-weight: $__bold;
+  padding: 0.2rem 0.75rem;
+  border-radius: 30px;
+  transition: 150ms all ease-in-out;
+
+  &.white {
+    background-color: $__main;
+    border: 2px solid transparent;
+    outline: 2px solid transparent;
+
+    &:hover {
+      opacity: 0.8;
+      border: 2px solid $__sub;
+      outline: 2px solid $__main;
+    }
+  }
+}
