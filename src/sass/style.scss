@@ -14,9 +14,10 @@
 /* UI */
 @import './ui/buttons';
 @import './ui/icons';
+@import './ui/swiper';
 
 /* Components */
-@import './components/header';
+@import './components/layout';
 @import './components/navbar/navbar';
 @import './components/navbar/navbar-primary';
 @import './components/navbar/navbar-search';

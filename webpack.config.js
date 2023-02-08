@@ -7,7 +7,11 @@ module.exports = {
   mode: 'development',
   watch: true,
   devtool: 'inline-source-map',
-  entry: { main: './src/index.ts', '/js/index': './src/ts/beforeLoading/resize.ts' },
+  entry: {
+    main: './src/index.ts',
+    swiper: './src/ts/swiper.ts',
+    resizeStopper: './src/ts/beforeLoading/resize.ts'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
@@ -31,7 +35,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(s[ac]ss|css)$/i,
         use: [
           MiniCssExtractPlugin.loader,
           // Translates CSS into CommonJS

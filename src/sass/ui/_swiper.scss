@@ -1,0 +1,31 @@
+.mySwiper {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.mySwiperThumbs {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mySwiperThumbs .swiper-wrapper {
+  height: 100%;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.mySwiperThumbs .swiper-slide {
+  width: 50%;
+  min-height: 100px;
+  max-height: 200px;
+  opacity: 0.4;
+}
+
+.mySwiperThumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}

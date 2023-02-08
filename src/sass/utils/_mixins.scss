@@ -146,6 +146,11 @@ $breakpoints: (
   }
 }
 /** Extends **/
+%full-width-height {
+  width: 100%;
+  height: 100%;
+}
+
 %equal-heights {
   display: flex;
   display: -webkit-flex;
