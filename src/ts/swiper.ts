@@ -1,10 +1,17 @@
-import Swiper, { Controller, EffectFade, Keyboard, SwiperOptions, Thumbs } from 'swiper';
+import Swiper, {
+  Autoplay,
+  Controller,
+  EffectFade,
+  Keyboard,
+  SwiperOptions,
+  Thumbs
+} from 'swiper';
 import 'swiper/css/effect-fade';
 import 'swiper/css/thumbs';
 import 'swiper/css';
 
 const thumbsParams: SwiperOptions = {
-  modules: [Keyboard, Controller],
+  modules: [Keyboard, Controller, Autoplay],
   loop: true,
   spaceBetween: '2%',
   slidesPerView: 'auto',
@@ -12,7 +19,9 @@ const thumbsParams: SwiperOptions = {
   slideToClickedSlide: true,
   grabCursor: true,
   watchSlidesProgress: true,
-  keyboard: true
+  keyboard: true,
+  autoplay: true,
+  speed: 2000
 };
 
 const galleryThumbs = new Swiper('.mySwiperThumbs', thumbsParams);
