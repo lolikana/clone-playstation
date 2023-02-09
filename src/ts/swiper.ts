@@ -13,21 +13,33 @@ import 'swiper/css';
 const thumbsParams: SwiperOptions = {
   modules: [Keyboard, Controller, Autoplay],
   loop: true,
-  spaceBetween: '2%',
   slidesPerView: 'auto',
+  spaceBetween: '2%',
   centeredSlides: true,
+  breakpoints: {
+    700: {
+      slidesPerView: 7,
+      centeredSlides: false,
+      spaceBetween: 7
+    }
+  },
   slideToClickedSlide: true,
   grabCursor: true,
   watchSlidesProgress: true,
   keyboard: true,
-  autoplay: true,
-  speed: 2000
+  autoplay: {
+    delay: 3000,
+    stopOnLastSlide: true,
+    disableOnInteraction: true,
+    pauseOnMouseEnter: true,
+    waitForTransition: true
+  }
 };
 
 const galleryThumbs = new Swiper('.mySwiperThumbs', thumbsParams);
 
 const sliderParams: SwiperOptions = {
-  modules: [Thumbs, EffectFade, Controller],
+  modules: [Thumbs, EffectFade, Controller, Autoplay],
   effect: 'fade',
   fadeEffect: {
     crossFade: true
