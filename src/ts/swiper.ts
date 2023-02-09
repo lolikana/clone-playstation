@@ -26,7 +26,8 @@ const sliderParams: SwiperOptions = {
   loop: true,
   thumbs: {
     swiper: galleryThumbs
-  }
+  },
+  speed: 500
 };
 
 new Swiper('.mySwiper', sliderParams);
