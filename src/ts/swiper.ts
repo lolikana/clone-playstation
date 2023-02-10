@@ -36,7 +36,7 @@ const thumbsParams: SwiperOptions = {
   }
 };
 
-const galleryThumbs = new Swiper('.mySwiperThumbs', thumbsParams);
+const galleryTopThumbs = new Swiper('.section--top-thumbnails', thumbsParams);
 
 const sliderParams: SwiperOptions = {
   modules: [Thumbs, EffectFade, Controller, Autoplay],
@@ -46,14 +46,27 @@ const sliderParams: SwiperOptions = {
   },
   loop: true,
   thumbs: {
-    swiper: galleryThumbs
+    swiper: galleryTopThumbs
   },
   speed: 500
 };
 
-new Swiper('.mySwiper', sliderParams);
+new Swiper('.section--top-swiper', sliderParams);
 
 // const slider = new Swiper('.mySwiper2', sliderParams);
 
 // galleryThumbs.controller.control = slider;
 // slider.controller.control = galleryThumbs;
+
+// const topSectionSlide = () => {
+//   const div = document.createElement('div');
+//   const picture = document.createElement('picture');
+//   const sourceLarge = document.createElement('source');
+//   const sourceMedium = document.createElement('source');
+//   const imgTop = document.createElement('img');
+//   const imgLogo = document.createElement('img');
+
+//   const anchor = document.createElement('a');
+//   const h1 = document.createElement('h1');
+//   const p = document.createElement('p');
+// };
