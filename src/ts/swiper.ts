@@ -67,12 +67,6 @@ const createTopSlide = (data: ISwiperTop) => {
   return divSlide;
 };
 
-const sectionTopWrapper = document.querySelector(
-  '.section--top-wrapper'
-) as HTMLDivElement;
-
-swiperTopData.map(data => sectionTopWrapper.appendChild(createTopSlide(data)));
-
 function createTopThumbs(data: ISwiperTop) {
   const div = document.createElement('div');
   const img = document.createElement('img');
@@ -94,14 +88,13 @@ function createTopThumbs(data: ISwiperTop) {
 const sectionTopThumbsWrapper = document.querySelector(
   '.top--thumbnail-wrapper'
 ) as HTMLDivElement;
-
 swiperTopData.map(data => sectionTopThumbsWrapper.appendChild(createTopThumbs(data)));
 
 const thumbsParams: SwiperOptions = {
   modules: [Keyboard, Autoplay],
   loop: true,
   slidesPerView: 'auto',
-  spaceBetween: 5,
+  spaceBetween: '2%',
   centeredSlides: true,
   slideToClickedSlide: true,
   grabCursor: true,
@@ -117,7 +110,7 @@ const thumbsParams: SwiperOptions = {
   breakpoints: {
     700: {
       loop: false,
-      slidesPerView: 6,
+      slidesPerView: swiperTopData.length,
       centeredSlides: false,
       spaceBetween: 7
     }
@@ -134,7 +127,7 @@ const sliderParams: SwiperOptions = {
     crossFade: true
   },
   loop: true,
-  loopedSlides: 6,
+  loopedSlides: swiperTopData.length,
   thumbs: {
     swiper: galleryTopThumbs
   },
