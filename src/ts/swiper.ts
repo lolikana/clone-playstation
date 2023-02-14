@@ -67,6 +67,12 @@ const createTopSlide = (data: ISwiperTop) => {
   return divSlide;
 };
 
+const sectionTopWrapper = document.querySelector(
+  '.section--top-wrapper'
+) as HTMLDivElement;
+
+swiperTopData.map(data => sectionTopWrapper.appendChild(createTopSlide(data)));
+
 function createTopThumbs(data: ISwiperTop) {
   const div = document.createElement('div');
   const img = document.createElement('img');
@@ -88,6 +94,7 @@ function createTopThumbs(data: ISwiperTop) {
 const sectionTopThumbsWrapper = document.querySelector(
   '.top--thumbnail-wrapper'
 ) as HTMLDivElement;
+
 swiperTopData.map(data => sectionTopThumbsWrapper.appendChild(createTopThumbs(data)));
 
 const thumbsParams: SwiperOptions = {
