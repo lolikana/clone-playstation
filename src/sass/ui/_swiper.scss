@@ -52,7 +52,7 @@
     opacity: 0.7;
   }
 
-  &.swiper-slide-active {
+  &.swiper-slide-thumb-active {
     outline: 2px solid $__primary_light;
     opacity: 1;
     transition: outline 1500ms, opacity 1000ms, bottom 150ms;
