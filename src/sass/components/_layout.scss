@@ -14,6 +14,10 @@ main {
   z-index: 999;
 }
 
+section {
+  margin-bottom: 2rem;
+}
+
 @media only screen and (min-width: 700px) {
   .header--sony {
     height: 2rem;

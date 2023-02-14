@@ -1,18 +1,26 @@
-import ForspokenMobile from '../../assets/images/slider/forspoken-mobile.webp';
-import ForspokenMedium from '../../assets/images/slider/forspoken-medium.webp';
-import ForspokenLarge from '../../assets/images/slider/forspoken.webp';
-import ForspokenThumb from '../../assets/images/slider/forspoken-thumb.png';
-import ForspokenLogo from '../../assets/images/slider/forspoken-logo.png';
-import DeadSpaceMobile from '../../assets/images/slider/dead_space-mobile.webp';
-import DeadSpaceMedium from '../../assets/images/slider/dead_space-medium.webp';
-import DeadSpaceLarge from '../../assets/images/slider/dead_space.webp';
-import DeadSpaceThumb from '../../assets/images/slider/dead_space-thumb.png';
-import DeadSpaceLogo from '../../assets/images/slider/dead_space-logo.png';
-import LivePS5Mobile from '../../assets/images/slider/live_ps5-mobile.webp';
-import LivePS5Medium from '../../assets/images/slider/live_ps5-medium.webp';
-import LivePS5Large from '../../assets/images/slider/live_ps5.webp';
-import LivePS5Thumb from '../../assets/images/slider/live_ps5-thumb.png';
-import LivePS5Logo from '../../assets/images/slider/live_ps5-logo.png';
+import ForspokenMobile from '../../assets/images/slider/top/forspoken-mobile.webp';
+import ForspokenMedium from '../../assets/images/slider/top/forspoken-medium.webp';
+import ForspokenLarge from '../../assets/images/slider/top/forspoken.webp';
+import ForspokenThumb from '../../assets/images/slider/top/forspoken-thumb.png';
+import ForspokenLogo from '../../assets/images/slider/top/forspoken-logo.png';
+import DeadSpaceMobile from '../../assets/images/slider/top/dead_space-mobile.webp';
+import DeadSpaceMedium from '../../assets/images/slider/top/dead_space-medium.webp';
+import DeadSpaceLarge from '../../assets/images/slider/top/dead_space.webp';
+import DeadSpaceThumb from '../../assets/images/slider/top/dead_space-thumb.png';
+import DeadSpaceLogo from '../../assets/images/slider/top/dead_space-logo.png';
+import LivePS5Mobile from '../../assets/images/slider/top/live_ps5-mobile.webp';
+import LivePS5Medium from '../../assets/images/slider/top/live_ps5-medium.webp';
+import LivePS5Large from '../../assets/images/slider/top/live_ps5.webp';
+import LivePS5Thumb from '../../assets/images/slider/top/live_ps5-thumb.png';
+import LivePS5Logo from '../../assets/images/slider/top/live_ps5-logo.png';
+
+import PS5Console from '../../assets/images/slider/hardware/playstation-5.webp';
+import DualCollection from '../../assets/images/slider/hardware/dualsense-collection.webp';
+import Headset from '../../assets/images/slider/hardware/3d-pulse-headset.webp';
+import DualEdge from '../../assets/images/slider/hardware/dualsense-edge.webp';
+import Remote from '../../assets/images/slider/hardware/media-remote.webp';
+import Camera from '../../assets/images/slider/hardware/hd-camera.webp';
+import PS5Cover from '../../assets/images/slider/hardware/ps5-console-cover.webp';
 
 export interface ISwiperTop {
   id: number;
@@ -32,7 +40,7 @@ interface ISwiperTopImg {
   thumb: string;
 }
 
-export const swiperTopData = [
+export const swiperTopData: ISwiperTop[] = [
   {
     id: 1,
     img: {
@@ -58,7 +66,7 @@ export const swiperTopData = [
     alt: 'dead space game',
     logo: DeadSpaceLogo,
     title: 'Humanity ends here',
-    text: ' The sci-fi survival horror classic returns, rebuilt to offer a deeper and more immersive experience, out now on PS5',
+    text: 'The sci-fi survival horror classic returns, rebuilt to offer a deeper and more immersive experience, out now on PS5',
     btn: { text: 'Find out more', href: '#' }
   },
   {
@@ -72,7 +80,7 @@ export const swiperTopData = [
     alt: 'dead space game',
     logo: DeadSpaceLogo,
     title: 'Humanity ends here',
-    text: ' The sci-fi survival horror classic returns, rebuilt to offer a deeper and more immersive experience, out now on PS5',
+    text: 'The sci-fi survival horror classic returns, rebuilt to offer a deeper and more immersive experience, out now on PS5',
     btn: { text: 'Find out more', href: '#' }
   },
   {
@@ -86,7 +94,7 @@ export const swiperTopData = [
     alt: 'dead space game',
     logo: DeadSpaceLogo,
     title: 'Humanity ends here',
-    text: ' The sci-fi survival horror classic returns, rebuilt to offer a deeper and more immersive experience, out now on PS5',
+    text: 'The sci-fi survival horror classic returns, rebuilt to offer a deeper and more immersive experience, out now on PS5',
     btn: { text: 'Find out more', href: '#' }
   },
   {
@@ -100,11 +108,25 @@ export const swiperTopData = [
     alt: 'dead space game',
     logo: DeadSpaceLogo,
     title: 'Humanity ends here',
-    text: ' The sci-fi survival horror classic returns, rebuilt to offer a deeper and more immersive experience, out now on PS5',
+    text: 'The sci-fi survival horror classic returns, rebuilt to offer a deeper and more immersive experience, out now on PS5',
     btn: { text: 'Find out more', href: '#' }
   },
   {
     id: 6,
+    img: {
+      large: DeadSpaceLarge,
+      medium: DeadSpaceMedium,
+      mobile: DeadSpaceMobile,
+      thumb: DeadSpaceThumb
+    },
+    alt: 'dead space game',
+    logo: DeadSpaceLogo,
+    title: 'Humanity ends here',
+    text: 'The sci-fi survival horror classic returns, rebuilt to offer a deeper and more immersive experience, out now on PS5',
+    btn: { text: 'Find out more', href: '#' }
+  },
+  {
+    id: 7,
     img: {
       large: LivePS5Large,
       medium: LivePS5Medium,
@@ -116,5 +138,76 @@ export const swiperTopData = [
     title: 'Bringing your the extraordinary',
     text: 'Explore incredible worlds and experience the unexpected. Start your story today.',
     btn: { text: 'Find out more', href: '#' }
+  }
+];
+
+export interface ISwiperHardware {
+  id: number;
+  img: string;
+  alt: string;
+  title: string;
+  text: string;
+  btn: { more: { text: string; href: string }; buy?: { text: string; href: string } };
+}
+
+export const swiperHardwareData: ISwiperHardware[] = [
+  {
+    id: 1,
+    img: PS5Console,
+    alt: 'PS5 Console',
+    title: 'PlayStation 5 Console',
+    text: 'Experience an all-new generation of incredible PlayStation games. PS5 consoles are currently in stock.',
+    btn: {
+      more: { text: 'Learn more', href: '#' },
+      buy: { text: 'Buy ow', href: '#' }
+    }
+  },
+  {
+    id: 2,
+    img: DualCollection,
+    alt: 'DualSense™ Wireless Controller',
+    title: 'DualSense™ Wireless Controller',
+    text: 'Immerse yourself in the gaming experience with a controller the supports responsive haptic feedback and dynamic trigger effects.',
+    btn: { more: { text: 'Learn more', href: '#' } }
+  },
+  {
+    id: 3,
+    img: Headset,
+    alt: 'PULSE 3D™ Wireless Headset',
+    title: 'PULSE 3D™ Wireless Headset',
+    text: 'Enjoy a seamless wireless experience with a headset fine-tuned for 3D Audio on PS5 consoles.',
+    btn: { more: { text: 'Learn more', href: '#' } }
+  },
+  {
+    id: 4,
+    img: DualEdge,
+    alt: 'DualSense Edge™ Wireless Controller',
+    title: 'DualSense Edge™ Wireless Controller',
+    text: 'Get an edge in gameplay with remappable buttons, tunable triggers and sticks, changeable stick caps, back buttons, and more.',
+    btn: { more: { text: 'Learn more', href: '#' } }
+  },
+  {
+    id: 5,
+    img: Remote,
+    alt: 'Media Remote',
+    title: 'Media Remote',
+    text: 'Conveniently control movies, streaming services and more on your PS5 console with an intuitive layout.',
+    btn: { more: { text: 'Learn more', href: '#' } }
+  },
+  {
+    id: 6,
+    img: Camera,
+    alt: 'HD Camera',
+    title: 'HD Camera',
+    text: 'Add yourself to your gameplay videos and broadcasts with smooth, sharp, full-HD capture.',
+    btn: { more: { text: 'Learn more', href: '#' } }
+  },
+  {
+    id: 7,
+    img: PS5Cover,
+    alt: 'PS5 Console Covers',
+    title: 'PS5 Console Covers',
+    text: 'Personalise your PlayStation 5 or PlayStation 5 Digital Edition console with a vibrant array of new colour options.',
+    btn: { more: { text: 'Learn more', href: '#' } }
   }
 ];
