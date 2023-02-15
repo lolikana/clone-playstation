@@ -40,6 +40,9 @@ const createTopSlide = (data: ISwiperTop) => {
   divDesc.classList.add('slide-desc');
 
   logo.classList.add('slide-logo');
+  if (data.classLogo) {
+    logo.classList.add(data.classLogo);
+  }
   logo.src = data.logo;
   logo.alt = `${data.alt} logo`;
   logo.loading = 'lazy';

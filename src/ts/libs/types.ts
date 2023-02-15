@@ -16,6 +16,7 @@ export interface ISwiperTop {
   img: ISwiperTopImg;
   alt: string;
   logo: string;
+  classLogo?: string;
   title: string;
   text: string;
   btn: { text: string; href: string };

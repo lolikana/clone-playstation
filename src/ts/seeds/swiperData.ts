@@ -118,6 +118,7 @@ export const swiperTopData: ISwiperTop[] = [
       thumb: LivePS5Thumb
     },
     logo: LivePS5Logo,
+    classLogo: 'ps-live',
     alt: 'live ps5 game',
     title: 'Bringing your the extraordinary',
     text: 'Explore incredible worlds and experience the unexpected. Start your story today.',
