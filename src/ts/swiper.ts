@@ -140,6 +140,7 @@ const sliderParams: SwiperOptions = {
   },
   loop: true,
   loopedSlides: swiperTopData.length,
+  touchRatio: 0,
   thumbs: {
     swiper: galleryTopThumbs
   },
@@ -259,7 +260,7 @@ const thumbsHardwareParams: SwiperOptions = {
   breakpoints: {
     700: {
       loop: false,
-      slidesPerView: swiperTopData.length,
+      slidesPerView: swiperHardwareData.length,
       centeredSlides: false,
       spaceBetween: 7
     }
@@ -279,7 +280,8 @@ const sliderHardwareParams: SwiperOptions = {
     crossFade: true
   },
   loop: true,
-  loopedSlides: swiperTopData.length,
+  loopedSlides: swiperHardwareData.length,
+  touchRatio: 0,
   thumbs: {
     swiper: galleryHardwareThumbs
   },
