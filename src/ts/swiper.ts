@@ -102,52 +102,6 @@ swiperTopData.map(data => {
   sectionTopThumbsWrapper.appendChild(createTopThumbs(data));
 });
 
-const thumbsParams: SwiperOptions = {
-  modules: [Keyboard, Autoplay],
-  loop: true,
-  slidesPerView: 'auto',
-  spaceBetween: '2%',
-  centeredSlides: true,
-  slideToClickedSlide: true,
-  grabCursor: true,
-  watchSlidesProgress: true,
-  keyboard: true,
-  autoplay: {
-    delay: 3000,
-    stopOnLastSlide: true,
-    disableOnInteraction: true,
-    pauseOnMouseEnter: true,
-    waitForTransition: true
-  },
-  breakpoints: {
-    700: {
-      loop: false,
-      slidesPerView: swiperTopData.length,
-      centeredSlides: false,
-      spaceBetween: 7
-    }
-  },
-  speed: 500
-};
-
-const galleryTopThumbs = new Swiper('.section--top-thumbnails', thumbsParams);
-
-const sliderParams: SwiperOptions = {
-  modules: [EffectFade, Thumbs],
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true
-  },
-  loop: true,
-  loopedSlides: swiperTopData.length,
-  touchRatio: 0,
-  thumbs: {
-    swiper: galleryTopThumbs
-  },
-  speed: 500
-};
-new Swiper('.section--top-swiper', sliderParams);
-
 /** Create Section Hardware Slider */
 const createHardwareSlide = (data: ISwiperHardware) => {
   const divSlide = document.createElement('div');
@@ -240,7 +194,8 @@ swiperHardwareData.map(data => {
   sectionHardwareThumbsWrapper.appendChild(createHardwareThumbs(data));
 });
 
-const thumbsHardwareParams: SwiperOptions = {
+/** Swiper Top Section Parameters */
+const thumbsParams: SwiperOptions = {
   modules: [Keyboard, Autoplay],
   loop: true,
   slidesPerView: 'auto',
@@ -260,31 +215,58 @@ const thumbsHardwareParams: SwiperOptions = {
   breakpoints: {
     700: {
       loop: false,
-      slidesPerView: swiperHardwareData.length,
       centeredSlides: false,
       spaceBetween: 7
     }
   },
   speed: 500
 };
+const thumsParamsTop: SwiperOptions = {
+  breakpoints: {
+    700: {
+      slidesPerView: swiperTopData.length
+    }
+  }
+};
+const thumsParamsHardware: SwiperOptions = {
+  breakpoints: {
+    700: {
+      slidesPerView: swiperHardwareData.length
+    }
+  }
+};
 
-const galleryHardwareThumbs = new Swiper(
-  '.section--hardware-thumbnails',
-  thumbsHardwareParams
-);
+const galleryTopThumbs = new Swiper('.section--top-thumbnails', {
+  ...thumbsParams,
+  ...thumsParamsTop
+});
+const galleryHardwareThumbs = new Swiper('.section--hardware-thumbnails', {
+  ...thumbsParams,
+  ...thumsParamsHardware
+});
 
-const sliderHardwareParams: SwiperOptions = {
+const sliderParams: SwiperOptions = {
   modules: [EffectFade, Thumbs],
   effect: 'fade',
   fadeEffect: {
     crossFade: true
   },
   loop: true,
-  loopedSlides: swiperHardwareData.length,
   touchRatio: 0,
-  thumbs: {
-    swiper: galleryHardwareThumbs
-  },
   speed: 500
 };
-new Swiper('.section--hardware-swiper', sliderHardwareParams);
+
+const sliderParamsTop: SwiperOptions = {
+  loopedSlides: swiperTopData.length,
+  thumbs: {
+    swiper: galleryTopThumbs
+  }
+};
+const sliderParamsHardware: SwiperOptions = {
+  loopedSlides: swiperHardwareData.length,
+  thumbs: {
+    swiper: galleryHardwareThumbs
+  }
+};
+new Swiper('.section--top-swiper', { ...sliderParams, ...sliderParamsTop });
+new Swiper('.section--hardware-swiper', { ...sliderParams, ...sliderParamsHardware });
