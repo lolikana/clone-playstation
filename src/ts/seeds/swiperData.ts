@@ -134,7 +134,7 @@ export const swiperHardwareData: ISwiperHardware[] = [
     text: 'Experience an all-new generation of incredible PlayStation games. PS5 consoles are currently in stock.',
     btn: {
       more: { text: 'Learn more', href: '#' },
-      buy: { text: 'Buy ow', href: '#' }
+      buy: { text: 'Buy now', href: '#' }
     }
   },
   {
