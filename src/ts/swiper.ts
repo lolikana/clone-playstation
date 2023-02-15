@@ -208,18 +208,14 @@ const thumbsParams: SwiperOptions = {
     pauseOnMouseEnter: true,
     waitForTransition: true
   },
-  breakpoints: {
-    700: {
-      loop: false,
-      centeredSlides: false,
-      spaceBetween: 7
-    }
-  },
   speed: 500
 };
 const thumsParamsTop: SwiperOptions = {
   breakpoints: {
     700: {
+      loop: false,
+      centeredSlides: false,
+      spaceBetween: 7,
       slidesPerView: swiperTopData.length
     }
   }
@@ -227,6 +223,9 @@ const thumsParamsTop: SwiperOptions = {
 const thumsParamsHardware: SwiperOptions = {
   breakpoints: {
     700: {
+      loop: false,
+      centeredSlides: false,
+      spaceBetween: 7,
       slidesPerView: swiperHardwareData.length
     }
   }
