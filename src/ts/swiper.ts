@@ -1,14 +1,10 @@
-import {
-  ISwiperHardware,
-  ISwiperTop,
-  swiperHardwareData,
-  swiperTopData
-} from './seeds/swiperData';
-
-import Swiper, { Autoplay, EffectFade, Keyboard, SwiperOptions, Thumbs } from 'swiper';
-import 'swiper/css/effect-fade';
-import 'swiper/css/thumbs';
 import 'swiper/css';
+import 'swiper/css/thumbs';
+import 'swiper/css/effect-fade';
+
+import { ISwiperHardware, ISwiperTop } from './libs/types';
+import Swiper, { Autoplay, EffectFade, Keyboard, SwiperOptions, Thumbs } from 'swiper';
+import { swiperHardwareData, swiperTopData } from './seeds/swiperData';
 
 const createTopSlide = (data: ISwiperTop) => {
   const divSlide = document.createElement('div');

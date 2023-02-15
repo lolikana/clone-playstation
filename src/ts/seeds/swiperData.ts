@@ -1,44 +1,28 @@
-import ForspokenMobile from '../../assets/images/slider/top/forspoken-mobile.webp';
-import ForspokenMedium from '../../assets/images/slider/top/forspoken-medium.webp';
-import ForspokenLarge from '../../assets/images/slider/top/forspoken.webp';
-import ForspokenThumb from '../../assets/images/slider/top/forspoken-thumb.png';
-import ForspokenLogo from '../../assets/images/slider/top/forspoken-logo.png';
-import DeadSpaceMobile from '../../assets/images/slider/top/dead_space-mobile.webp';
-import DeadSpaceMedium from '../../assets/images/slider/top/dead_space-medium.webp';
+import { ISwiperHardware, ISwiperTop } from '../libs/types';
+
 import DeadSpaceLarge from '../../assets/images/slider/top/dead_space.webp';
-import DeadSpaceThumb from '../../assets/images/slider/top/dead_space-thumb.png';
 import DeadSpaceLogo from '../../assets/images/slider/top/dead_space-logo.png';
-import LivePS5Mobile from '../../assets/images/slider/top/live_ps5-mobile.webp';
-import LivePS5Medium from '../../assets/images/slider/top/live_ps5-medium.webp';
+import DeadSpaceMedium from '../../assets/images/slider/top/dead_space-medium.webp';
+import DeadSpaceMobile from '../../assets/images/slider/top/dead_space-mobile.webp';
+import DeadSpaceThumb from '../../assets/images/slider/top/dead_space-thumb.png';
+import ForspokenLarge from '../../assets/images/slider/top/forspoken.webp';
+import ForspokenLogo from '../../assets/images/slider/top/forspoken-logo.png';
+import ForspokenMedium from '../../assets/images/slider/top/forspoken-medium.webp';
+import ForspokenMobile from '../../assets/images/slider/top/forspoken-mobile.webp';
+import ForspokenThumb from '../../assets/images/slider/top/forspoken-thumb.png';
 import LivePS5Large from '../../assets/images/slider/top/live_ps5.webp';
-import LivePS5Thumb from '../../assets/images/slider/top/live_ps5-thumb.png';
 import LivePS5Logo from '../../assets/images/slider/top/live_ps5-logo.png';
+import LivePS5Medium from '../../assets/images/slider/top/live_ps5-medium.webp';
+import LivePS5Mobile from '../../assets/images/slider/top/live_ps5-mobile.webp';
+import LivePS5Thumb from '../../assets/images/slider/top/live_ps5-thumb.png';
 
-import PS5Console from '../../assets/images/slider/hardware/playstation-5.webp';
-import DualCollection from '../../assets/images/slider/hardware/dualsense-collection.webp';
-import Headset from '../../assets/images/slider/hardware/3d-pulse-headset.webp';
-import DualEdge from '../../assets/images/slider/hardware/dualsense-edge.webp';
-import Remote from '../../assets/images/slider/hardware/media-remote.webp';
-import Camera from '../../assets/images/slider/hardware/hd-camera.webp';
-import PS5Cover from '../../assets/images/slider/hardware/ps5-console-cover.webp';
-
-export interface ISwiperTop {
-  id: number;
-  img: ISwiperTopImg;
-  alt: string;
-  logo: string;
-  title: string;
-  text: string;
-  btn: { text: string; href: string };
-}
-[];
-
-interface ISwiperTopImg {
-  large: string;
-  medium: string;
-  mobile: string;
-  thumb: string;
-}
+import HardwareCamera from '../../assets/images/slider/hardware/hd-camera.webp';
+import HardwareDualCollection from '../../assets/images/slider/hardware/dualsense-collection.webp';
+import HardwareDualEdge from '../../assets/images/slider/hardware/dualsense-edge.webp';
+import HardwareHeadset from '../../assets/images/slider/hardware/3d-pulse-headset.webp';
+import HardwarePS5Console from '../../assets/images/slider/hardware/playstation-5.webp';
+import HardwarePS5Cover from '../../assets/images/slider/hardware/ps5-console-cover.webp';
+import HardwareRemote from '../../assets/images/slider/hardware/media-remote.webp';
 
 export const swiperTopData: ISwiperTop[] = [
   {
@@ -141,19 +125,10 @@ export const swiperTopData: ISwiperTop[] = [
   }
 ];
 
-export interface ISwiperHardware {
-  id: number;
-  img: string;
-  alt: string;
-  title: string;
-  text: string;
-  btn: { more: { text: string; href: string }; buy?: { text: string; href: string } };
-}
-
 export const swiperHardwareData: ISwiperHardware[] = [
   {
     id: 1,
-    img: PS5Console,
+    img: HardwarePS5Console,
     alt: 'PS5 Console',
     title: 'PlayStation 5 Console',
     text: 'Experience an all-new generation of incredible PlayStation games. PS5 consoles are currently in stock.',
@@ -164,7 +139,7 @@ export const swiperHardwareData: ISwiperHardware[] = [
   },
   {
     id: 2,
-    img: DualCollection,
+    img: HardwareDualCollection,
     alt: 'DualSense™ Wireless Controller',
     title: 'DualSense™ Wireless Controller',
     text: 'Immerse yourself in the gaming experience with a controller the supports responsive haptic feedback and dynamic trigger effects.',
@@ -172,7 +147,7 @@ export const swiperHardwareData: ISwiperHardware[] = [
   },
   {
     id: 3,
-    img: Headset,
+    img: HardwareHeadset,
     alt: 'PULSE 3D™ Wireless Headset',
     title: 'PULSE 3D™ Wireless Headset',
     text: 'Enjoy a seamless wireless experience with a headset fine-tuned for 3D Audio on PS5 consoles.',
@@ -180,7 +155,7 @@ export const swiperHardwareData: ISwiperHardware[] = [
   },
   {
     id: 4,
-    img: DualEdge,
+    img: HardwareDualEdge,
     alt: 'DualSense Edge™ Wireless Controller',
     title: 'DualSense Edge™ Wireless Controller',
     text: 'Get an edge in gameplay with remappable buttons, tunable triggers and sticks, changeable stick caps, back buttons, and more.',
@@ -188,7 +163,7 @@ export const swiperHardwareData: ISwiperHardware[] = [
   },
   {
     id: 5,
-    img: Remote,
+    img: HardwareRemote,
     alt: 'Media Remote',
     title: 'Media Remote',
     text: 'Conveniently control movies, streaming services and more on your PS5 console with an intuitive layout.',
@@ -196,7 +171,7 @@ export const swiperHardwareData: ISwiperHardware[] = [
   },
   {
     id: 6,
-    img: Camera,
+    img: HardwareCamera,
     alt: 'HD Camera',
     title: 'HD Camera',
     text: 'Add yourself to your gameplay videos and broadcasts with smooth, sharp, full-HD capture.',
@@ -204,7 +179,7 @@ export const swiperHardwareData: ISwiperHardware[] = [
   },
   {
     id: 7,
-    img: PS5Cover,
+    img: HardwarePS5Cover,
     alt: 'PS5 Console Covers',
     title: 'PS5 Console Covers',
     text: 'Personalise your PlayStation 5 or PlayStation 5 Digital Edition console with a vibrant array of new colour options.',

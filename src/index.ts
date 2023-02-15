@@ -42,13 +42,13 @@ const searchTextInput = document.querySelector(
 ) as HTMLInputElement;
 
 window.onscroll = function () {
-  myFunction();
+  setStickyNav();
 };
 
 const nav = document.getElementsByTagName('nav')[0] as HTMLElement;
 const sticky = nav.offsetTop;
 
-function myFunction() {
+function setStickyNav() {
   if (window.pageYOffset >= sticky) {
     nav.classList.add('sticky');
   } else {
@@ -56,7 +56,7 @@ function myFunction() {
   }
 }
 
-/** Burger Menu **/
+/* Burger Menu */
 let menuOpen = false;
 
 function setPrimaryNav(set: boolean) {
@@ -73,9 +73,7 @@ function setPrimaryNav(set: boolean) {
 
 htmlSelect.addEventListener('click', e => {
   const visibilityNavPrimary = primaryNav.getAttribute('data-visible');
-  const target = e.target as any;
-  // const currentTarget = e.currentTarget as any;
-  console.log(target);
+  const target = e.target as HTMLElement;
   if (
     target === primaryNav ||
     target === secondaryNav ||
@@ -100,6 +98,7 @@ htmlSelect.addEventListener('click', e => {
     });
   }
 
+  /** Close dropwdown when select option **/
   if (target !== searchSelectPlaceholderBtn) {
     searchSelectPlaceholderBtn.classList.remove('active');
     searchDropdown.classList.remove('show');
@@ -107,9 +106,9 @@ htmlSelect.addEventListener('click', e => {
   }
 });
 
-/** display active arrow primary nav */
-linksNav.addEventListener('click', (e: any) => {
-  const clicked = e.target.closest('.nav-link-btn');
+/* display active arrow primary nav (desktop) */
+linksNav.addEventListener('click', (e: Event) => {
+  const clicked = (e.target as HTMLElement).closest('.nav-link-btn');
   if (clicked === null) return;
 
   if (clicked.classList.contains('active')) {
@@ -129,12 +128,11 @@ linksNav.addEventListener('click', (e: any) => {
     setPrimaryNav(true);
   });
 
-  /*** display second nav bar data on click primary nav btn ***/
+  /** display second nav bar data **/
   const data = navSecondData.filter(item => item.id === clicked.innerHTML);
   createSecondaryElements(data[0]);
 });
 
-/** Close second nav toggler */
 togglerBtnSecondaryNav.addEventListener('click', () => {
   secondaryNav.setAttribute('data-visible', 'false');
   btnsLinkNav.forEach(btn => {
@@ -142,7 +140,7 @@ togglerBtnSecondaryNav.addEventListener('click', () => {
   });
 });
 
-/** Create second nav element */
+/* Create second nav element */
 const createSecondNavItem = (icon: string, title: string): HTMLLIElement => {
   const li = document.createElement('li');
   const anchor = document.createElement('a');

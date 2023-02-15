@@ -1,17 +1,18 @@
 import { INavSecondData } from '../libs/types';
-import PS5Icon from '../../assets/images/icon/navbar-secondary/ps5.png';
+
 import PS4Icon from '../../assets/images/icon/navbar-secondary/ps4.png';
 import PS4PropIcon from '../../assets/images/icon/navbar-secondary/ps4-pro.png';
-import PSVRIcon from '../../assets/images/icon/navbar-secondary/ps-vr.png';
-import PSVR2Icon from '../../assets/images/icon/navbar-secondary/ps-vr2.png';
-import PSPlusIcon from '../../assets/images/icon/navbar-secondary/ps-plus.png';
-import ShopGameIcon from '../../assets/images/icon/navbar-secondary/shop-games.png';
-import PSStarsIcon from '../../assets/images/icon/navbar-secondary/ps-stars.png';
+import PS5Icon from '../../assets/images/icon/navbar-secondary/ps5.png';
 import PSBlogIcon from '../../assets/images/icon/navbar-secondary/ps-blog.png';
 import PSBlogMonthIcon from '../../assets/images/icon/navbar-secondary/ps-blog-month.png';
+import PSNIcon from '../../assets/images/icon/navbar-secondary/ps-psn.png';
+import PSPlusIcon from '../../assets/images/icon/navbar-secondary/ps-plus.png';
+import PSStarsIcon from '../../assets/images/icon/navbar-secondary/ps-stars.png';
+import PSVR2Icon from '../../assets/images/icon/navbar-secondary/ps-vr2.png';
+import PSVRIcon from '../../assets/images/icon/navbar-secondary/ps-vr.png';
+import ShopGameIcon from '../../assets/images/icon/navbar-secondary/shop-games.png';
 import ShopOffIcon from '../../assets/images/icon/navbar-secondary/shop-official.png';
 import SupportIcon from '../../assets/images/icon/navbar-secondary/ps-support.png';
-import PSNIcon from '../../assets/images/icon/navbar-secondary/ps-psn.png';
 
 export const navSecondData: INavSecondData[] = [
   {
