@@ -14,11 +14,11 @@ main {
   z-index: 999;
 }
 
-section {
-  margin-bottom: 2rem;
-}
 .section--container {
   padding: 1rem;
+}
+.section--margin {
+  margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 700px) {
