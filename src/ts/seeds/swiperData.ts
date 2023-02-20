@@ -24,6 +24,10 @@ import HardwarePS5Console from '../../assets/images/slider/hardware/playstation-
 import HardwarePS5Cover from '../../assets/images/slider/hardware/ps5-console-cover.webp';
 import HardwareRemote from '../../assets/images/slider/hardware/media-remote.webp';
 
+import RandomGameLarge from '../../assets/images/section-random-game/god-of-war-ragnarok-hero-banner-desktop-02-en-07sep21.webp';
+import RandomGameLogo from '../../assets/images/section-random-game/god-of-war-ragnarok-hero-banner-mobile-01-en-07sep21.webp';
+import RandomGameMobile from '../../assets/images/section-random-game/GOW_Ragnar%3Fk_logo.webp';
+
 export const swiperTopData: ISwiperTop[] = [
   {
     id: 1,
@@ -187,3 +191,15 @@ export const swiperHardwareData: ISwiperHardware[] = [
     btn: { more: { text: 'Learn more', href: '#' } }
   }
 ];
+
+export const swiperRandomGameData: any = {
+  img: {
+    large: RandomGameLarge,
+    mobile: RandomGameMobile
+  },
+  alt: 'God of War Ragnarok',
+  logo: RandomGameLogo,
+  title: 'The Norse saga continues',
+  text: '   Embark on an epix and heartfelt journey as Kratos, and Atreus, struggle with holding on and letting go, available now on PS4 & PS5',
+  btn: { text: 'Buy now', href: '#' }
+};

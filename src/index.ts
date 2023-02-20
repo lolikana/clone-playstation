@@ -253,3 +253,24 @@ searchModal.addEventListener('click', e => {
   closeSearchModal();
 });
 /* ----------- Search bar END ----------- */
+
+/* ----------- Reveal Text Section Random Game ----------- */
+const sectionRandomGameDesc = document.querySelector(
+  '.section--randomGame-slide'
+) as HTMLDivElement;
+const sectionRevealRandomGameDesc = (
+  entries: IntersectionObserverEntry[],
+  observer: IntersectionObserver
+) => {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.classList.add('random-slide-active');
+  observer.unobserve(entry.target);
+};
+
+const sectionRandomGameObserver = new IntersectionObserver(sectionRevealRandomGameDesc, {
+  root: null,
+  threshold: 0.15
+});
+sectionRandomGameDesc.classList.remove('random-slide-active');
+sectionRandomGameObserver.observe(sectionRandomGameDesc);
