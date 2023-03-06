@@ -2,3 +2,7 @@ html {
   font-family: $__body__font__family;
   line-height: 1.5;
 }
+
+body {
+  min-width: 375px;
+}

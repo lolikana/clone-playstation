@@ -1,4 +1,12 @@
-import Swiper, { Autoplay, EffectFade, Keyboard, SwiperOptions, Thumbs } from 'swiper';
+import Swiper, {
+  Autoplay,
+  EffectFade,
+  Grid,
+  Keyboard,
+  Pagination,
+  SwiperOptions,
+  Thumbs
+} from 'swiper';
 import { swiperHardwareData, swiperTopData } from '../seeds/swiperData';
 
 export const sliderParams: SwiperOptions = {
@@ -75,3 +83,35 @@ export const sliderParamsHardware: SwiperOptions = {
     swiper: galleryHardwareThumbs
   }
 };
+
+/** Slider HP List Games **/
+const listGamesParams: SwiperOptions = {
+  modules: [Pagination, Grid, Keyboard],
+  slidesPerView: 2,
+  spaceBetween: 20,
+  keyboard: true,
+  grid: {
+    fill: 'row',
+    rows: 2
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 4,
+      grid: {
+        fill: 'row',
+        rows: 3
+      }
+    }
+  },
+  pagination: {
+    clickable: true,
+    type: 'bullets',
+    el: '.swiper-pagination',
+    renderBullet: function () {
+      return '<div class="swiper-pagination-bullet">' + '<span></span>' + '</div>';
+    }
+  }
+};
+
+new Swiper('.section--listGames-newReleases', listGamesParams);
+new Swiper('.section--listGames-comingSoon', listGamesParams);

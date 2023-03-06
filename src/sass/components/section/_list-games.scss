@@ -1,0 +1,64 @@
+.section--listGames {
+  background-color: #000;
+  color: $__main;
+  padding: 2rem 1rem;
+
+  &-desc {
+    h1 {
+      font-family: $__body__font__bold_family;
+    }
+    h2 {
+      font-size: 1rem;
+    }
+  }
+}
+
+.section--listGames-swiper {
+  width: 100%;
+  height: 100%;
+  max-height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  --swiper-pagination-bullet-horizontal-gap: 5px;
+  --swiper-pagination-bullet-width: 20px;
+  --swiper-pagination-bullet-height: 2px;
+
+  .swiper-wrapper {
+    margin: 2rem 0 4rem;
+
+    .swiper-slide {
+      height: calc(100% - 20px) / 2;
+    }
+
+    .swiper-slide {
+      figure {
+        margin: 0;
+      }
+      figcaption {
+        margin-top: 0.3rem;
+        font-size: 0.9rem;
+      }
+      img {
+        object-fit: cover;
+        border-radius: 10px;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+  .swiper-pagination-bullets {
+    .swiper-pagination-bullet {
+      border-radius: 0;
+      background: $__main;
+      vertical-align: middle;
+
+      span {
+        display: inline-block;
+        width: 100%;
+        padding: 10px 0;
+        position: relative;
+        top: -8px;
+      }
+    }
+  }
+}

@@ -1,7 +1,3 @@
-import 'swiper/css';
-import 'swiper/css/thumbs';
-import 'swiper/css/effect-fade';
-
 import './swiper/create-hp-top';
 import './swiper/create-hp-hardware';
 

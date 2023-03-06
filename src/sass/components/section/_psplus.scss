@@ -53,6 +53,7 @@
     }
     &-img {
       order: 2;
+      height: 80%;
       img {
         position: relative;
         right: 0;
@@ -60,7 +61,6 @@
     }
     &-desc {
       order: 1;
-      // flex: 2;
       max-width: 40%;
     }
   }

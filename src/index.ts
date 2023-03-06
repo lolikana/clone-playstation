@@ -1,5 +1,4 @@
-import './sass/style.scss';
-import * as _ from 'lodash';
+import './ts/libs/import.ts';
 
 import { INavSecondData } from './ts/libs/types';
 import { navSecondData } from './ts/seeds/data';
