@@ -1,8 +1,8 @@
 .mySwiper {
   width: 100%;
+  min-height: 460px;
 
   @include respond-above(custom700) {
-    min-height: 60vh;
     max-height: 80%;
   }
   @include respond-above(custom1024) {
