@@ -38,8 +38,8 @@ for (let i = 1; i <= 12; i++) {
   );
   listGamesComingSoonWrapper.appendChild(
     createListSlide({
-      title: 'The Last of Us',
-      img: 'https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg'
+      title: 'Biohazard 5',
+      img: 'https://www.residentevil.com/4/_asset/images/bio4-share-global.png'
     })
   );
 }

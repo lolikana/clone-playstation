@@ -63,6 +63,10 @@
   }
 }
 
+.listGames--navigation {
+  display: none;
+}
+
 @media only screen and (width > 768px) {
   .section--listGames {
     position: relative;
@@ -97,7 +101,7 @@
       span {
         position: relative;
         top: 0.1rem;
-        left: 0.1rem;
+        left: 0.09rem;
       }
     }
   }
