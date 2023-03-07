@@ -9,18 +9,17 @@
 
   cursor: pointer;
   transition: 250ms all ease-in-out;
+}
 
-  &.blue {
-    color: $__main;
-    background-color: $__primary_light;
-
-    &:hover {
-      background-color: $__primary_dark;
-    }
+.button--signin {
+  color: $__main;
+  background-color: $__primary_light;
+  &:hover {
+    background-color: $__primary_dark;
   }
 }
 
-.button--link {
+.button--border {
   color: $__main;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8rem;
@@ -38,8 +37,10 @@
     bottom: -4px;
     border-radius: 25px;
   }
+}
 
-  &.white {
+.button--color {
+  &-white {
     position: relative;
     background-color: $__main;
     color: $__sub;
@@ -49,7 +50,7 @@
       }
     }
   }
-  &.blue {
+  &-blue {
     position: relative;
     background: $__primary_light;
     &:hover {
@@ -59,7 +60,7 @@
       }
     }
   }
-  &.orange {
+  &-orange {
     position: relative;
     background: $__secondary_light;
     &:hover {
@@ -68,5 +69,18 @@
         border: $__secondary_main 2px solid;
       }
     }
+  }
+}
+
+.button--rounded {
+  border-radius: 50%;
+
+  &::after {
+    content: '';
+    border-radius: 50%;
+  }
+
+  &:hover {
+    opacity: 0.8;
   }
 }

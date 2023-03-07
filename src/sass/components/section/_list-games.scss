@@ -65,21 +65,52 @@
 
 @media only screen and (width > 768px) {
   .section--listGames {
+    position: relative;
     display: flex;
 
     padding-left: 6rem;
     overflow: hidden;
+  }
 
-    .listGames--container {
-      width: 90%;
-      height: 100%;
-      margin-right: 3rem;
+  .listGames--pagination {
+    position: absolute;
+    right: 6rem;
+    display: flex;
+    gap: 1rem;
+
+    &-left,
+    &-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.5rem;
+      height: 2.5rem;
     }
-
-    .listGames--container-swiper {
-      .swiper-wrapper {
-        margin-bottom: 0;
+    &-left {
+      span {
+        position: relative;
+        top: 0.1rem;
+        left: 0.25rem;
       }
+    }
+    &-right {
+      span {
+        position: relative;
+        top: 0.1rem;
+        left: 0.1rem;
+      }
+    }
+  }
+
+  .listGames--container {
+    width: 90%;
+    height: 100%;
+    margin-right: 3rem;
+  }
+
+  .listGames--container-swiper {
+    .swiper-wrapper {
+      margin-bottom: 0;
     }
   }
 }

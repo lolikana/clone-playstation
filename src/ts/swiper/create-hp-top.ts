@@ -50,7 +50,7 @@ const createTopSlide = (data: ISwiperTop) => {
 
   divBtn.classList.add('slide-btn');
 
-  btn.classList.add('button--link', 'white');
+  btn.classList.add('button', 'button--border', 'button--color-white');
   btn.textContent = data.btn.text;
   btn.href = data.btn.href;
   divBtn.appendChild(btn);

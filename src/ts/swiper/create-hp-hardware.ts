@@ -29,12 +29,12 @@ const createHardwareSlide = (data: ISwiperHardware) => {
 
   divBtn.classList.add('slide-btn');
 
-  btnMore.classList.add('button--link', 'blue');
+  btnMore.classList.add('button', 'button--border', 'button--color-blue');
   btnMore.textContent = data.btn.more.text;
   btnMore.href = data.btn.more.href;
   divBtn.appendChild(btnMore);
   if (data.btn.buy) {
-    btnBuy.classList.add('button--link', 'orange');
+    btnBuy.classList.add('button', 'button--border', 'button--color-orange');
     btnBuy.textContent = data.btn.buy.text;
     btnBuy.href = data.btn.buy.href;
     divBtn.appendChild(btnBuy);
