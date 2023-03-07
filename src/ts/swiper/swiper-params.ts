@@ -97,9 +97,13 @@ const listGamesParams: SwiperOptions = {
   breakpoints: {
     768: {
       slidesPerView: 4,
+      spaceBetween: 40,
       grid: {
         fill: 'row',
         rows: 3
+      },
+      pagination: {
+        enabled: false
       }
     }
   },
