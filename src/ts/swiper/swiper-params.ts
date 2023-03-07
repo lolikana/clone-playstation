@@ -117,5 +117,5 @@ const listGamesParams: SwiperOptions = {
   }
 };
 
-new Swiper('.section--listGames-newReleases', listGamesParams);
-new Swiper('.section--listGames-comingSoon', listGamesParams);
+new Swiper('.listGames--container-newReleases', listGamesParams);
+new Swiper('.listGames--container-comingSoon', listGamesParams);

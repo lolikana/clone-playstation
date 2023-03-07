@@ -2,18 +2,18 @@
   background-color: #000;
   color: $__main;
   padding: 2rem 1rem;
+}
 
-  &-desc {
-    h1 {
-      font-family: $__body__font__bold_family;
-    }
-    h2 {
-      font-size: 1rem;
-    }
+.listGames--container-desc {
+  h1 {
+    font-family: $__body__font__bold_family;
+  }
+  h2 {
+    font-size: 1rem;
   }
 }
 
-.section--listGames-swiper {
+.listGames--container-swiper {
   width: 100%;
   height: 100%;
   max-height: fit-content;
@@ -66,16 +66,17 @@
 @media only screen and (width > 768px) {
   .section--listGames {
     display: flex;
-    gap: 3rem;
 
     padding-left: 6rem;
+    overflow: hidden;
 
-    > div {
+    .listGames--container {
       width: 90%;
       height: 100%;
+      margin-right: 3rem;
     }
 
-    .section--listGames-swiper {
+    .listGames--container-swiper {
       .swiper-wrapper {
         margin-bottom: 0;
       }

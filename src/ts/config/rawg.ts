@@ -7,10 +7,10 @@
 // const lastThirtyDays = normalizeDate(new Date(Date.now() - 1000 * 60 * 60 * 24 * 30));
 
 const listGamesNewReleasesWrapper = document.querySelector(
-  '.section--listGames-newReleases .section--listGames-wrapper'
+  '.listGames--container-newReleases .listGames--wrapper'
 ) as HTMLDivElement;
 const listGamesComingSoonWrapper = document.querySelector(
-  '.section--listGames-comingSoon .section--listGames-wrapper'
+  '.listGames--container-comingSoon .listGames--wrapper'
 ) as HTMLDivElement;
 
 const createListSlide = (data: { img: string; title: string }) => {
@@ -19,7 +19,7 @@ const createListSlide = (data: { img: string; title: string }) => {
   const img = document.createElement('img');
   const figcaption = document.createElement('figcaption');
 
-  div.classList.add('swiper-slide', 'section--listGames-slide');
+  div.classList.add('swiper-slide', 'listGames--slide');
   img.src = data.img;
   figcaption.textContent = data.title;
 
