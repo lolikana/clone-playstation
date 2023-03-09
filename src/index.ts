@@ -253,7 +253,7 @@ searchModal.addEventListener('click', e => {
 });
 /* ----------- Search bar END ----------- */
 
-/* ----------- Reveal Text Section Random Game ----------- */
+/* ----------- Reveal Text Section Random Game START ----------- */
 const sectionRandomGameDesc = document.querySelector(
   '.section--randomGame-slide'
 ) as HTMLDivElement;
@@ -273,3 +273,73 @@ const sectionRandomGameObserver = new IntersectionObserver(sectionRevealRandomGa
 });
 sectionRandomGameDesc.classList.remove('random-slide-active');
 sectionRandomGameObserver.observe(sectionRandomGameDesc);
+/* ----------- Reveal Text Section Random Game END ----------- */
+
+/* ----------- List Games Slider START ----------- */
+const listGamesBtnLeft = document.querySelector(
+  '.listGames--navigation-left'
+) as HTMLButtonElement;
+const listGamesBtnRight = document.querySelector(
+  '.listGames--navigation-right'
+) as HTMLButtonElement;
+const listGamesMain = document.querySelector(
+  '.listGames--container:nth-child(2)'
+) as HTMLDivElement;
+const listGamesSecond = document.querySelector(
+  '.listGames--container:nth-child(3)'
+) as HTMLDivElement;
+
+const checkDataSlide = () => {
+  if (listGamesMain.dataset.slide === '2' && listGamesSecond.dataset.slide === '1') {
+    listGamesMain.dataset.slide = '1';
+    listGamesSecond.dataset.slide = '2';
+  } else {
+    listGamesMain.dataset.slide = '2';
+    listGamesSecond.dataset.slide = '1';
+  }
+};
+
+const addClassSlide = (direction: string) => {
+  if (direction == 'left') {
+    if (listGamesMain.dataset.slide === '2') {
+      listGamesMain.classList.add('leftOut');
+      listGamesSecond.classList.add('leftIn');
+    } else {
+      listGamesMain.classList.add('leftIn');
+      listGamesSecond.classList.add('leftOut');
+    }
+  } else {
+    if (listGamesMain.dataset.slide === '1') {
+      listGamesMain.classList.add('rightOut');
+      listGamesSecond.classList.add('rightIn');
+    } else {
+      listGamesMain.classList.add('rightIn');
+      listGamesSecond.classList.add('rightOut');
+    }
+  }
+};
+
+const removeSlideAnimation = () => {
+  listGamesMain.classList.remove('leftIn');
+  listGamesMain.classList.remove('leftOut');
+  listGamesSecond.classList.remove('leftIn');
+  listGamesSecond.classList.remove('leftOut');
+  listGamesMain.classList.remove('rightIn');
+  listGamesMain.classList.remove('rightOut');
+  listGamesSecond.classList.remove('rightIn');
+  listGamesSecond.classList.remove('rightOut');
+};
+
+listGamesBtnLeft.addEventListener('click', () => {
+  removeSlideAnimation();
+  checkDataSlide();
+  addClassSlide('left');
+});
+
+listGamesBtnRight.addEventListener('click', () => {
+  removeSlideAnimation();
+  checkDataSlide();
+  addClassSlide('right');
+});
+
+/* ----------- List Games Slider END ----------- */

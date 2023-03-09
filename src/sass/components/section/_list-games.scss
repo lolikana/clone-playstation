@@ -38,6 +38,13 @@
       figcaption {
         margin-top: 0.3rem;
         font-size: 0.9rem;
+        height: 45px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       img {
         object-fit: cover;
@@ -76,9 +83,17 @@
     overflow: hidden;
   }
 
+  .listGames--container-swiper {
+    .swiper-wrapper {
+      .swiper-slide {
+      }
+    }
+  }
+
   .listGames--navigation {
+    z-index: 1000;
     position: absolute;
-    right: 6rem;
+    right: 10%;
     display: flex;
     gap: 1rem;
 
@@ -107,14 +122,110 @@
   }
 
   .listGames--container {
+    z-index: 1;
     width: 90%;
     height: 100%;
     margin-right: 3rem;
+    position: relative;
+
+    &[data-slide='1'] {
+      order: 1;
+      opacity: 1;
+    }
+    &[data-slide='1'].leftIn {
+      animation: sliderLeftIn $__transitionInDelay ease forwards;
+    }
+    &[data-slide='1'].rightOut {
+      animation: sliderRightOut $__transitionInDelay ease forwards;
+    }
+    &[data-slide='2'] {
+      order: 2;
+      opacity: 0.4;
+    }
+    &[data-slide='2'].leftOut {
+      animation: sliderLeftOut ($__transitionInDelay - 200ms) ease forwards,
+        150ms opacityLeft ($__transitionInDelay - 100ms) ease forwards;
+    }
+    &[data-slide='2'].rightIn {
+      animation: sliderRightIn ($__transitionInDelay - 200ms) ease forwards,
+        $__transitionInDelay opacityRight ($__transitionInDelay - 400ms) ease forwards;
+    }
   }
 
   .listGames--container-swiper {
     .swiper-wrapper {
       margin-bottom: 0;
     }
+  }
+}
+
+@keyframes sliderLeftIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes sliderLeftOut {
+  0% {
+    transform: translateX(-120%);
+    opacity: 1;
+  }
+  99% {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+}
+
+@keyframes opacityLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 0.4;
+  }
+}
+@keyframes sliderRightIn {
+  0% {
+    transform: translateX(0%);
+    opacity: 0.4;
+  }
+  1% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+}
+@keyframes opacityRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-105%);
+    opacity: 1;
+  }
+}
+@keyframes sliderRightOut {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(105%);
+    opacity: 0.4;
   }
 }

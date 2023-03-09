@@ -90,6 +90,15 @@ const listGamesParams: SwiperOptions = {
   slidesPerView: 2,
   spaceBetween: 20,
   keyboard: true,
+  pagination: {
+    enabled: true,
+    clickable: true,
+    type: 'bullets',
+    el: '.swiper-pagination',
+    renderBullet: function () {
+      return '<div class="swiper-pagination-bullet">' + '<span></span>' + '</div>';
+    }
+  },
   grid: {
     fill: 'row',
     rows: 2
@@ -105,14 +114,14 @@ const listGamesParams: SwiperOptions = {
       pagination: {
         enabled: false
       }
-    }
-  },
-  pagination: {
-    clickable: true,
-    type: 'bullets',
-    el: '.swiper-pagination',
-    renderBullet: function () {
-      return '<div class="swiper-pagination-bullet">' + '<span></span>' + '</div>';
+    },
+    1024: {
+      slidesPerView: 6,
+      spaceBetween: 40,
+      grid: {
+        fill: 'row',
+        rows: 2
+      }
     }
   }
 };
