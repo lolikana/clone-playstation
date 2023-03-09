@@ -105,6 +105,6 @@
   "include": [
     "./src",
     "**/*.ts",
-    "webpack.config.js"
+    "webpack.common.js"
   ] /* specifies the files to be included in the TypeScript project. */
 }

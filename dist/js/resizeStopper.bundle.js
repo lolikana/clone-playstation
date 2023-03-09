@@ -1,0 +1,2 @@
+(()=>{"use strict";let e;window.addEventListener("resize",(()=>{document.body.classList.add("resize-animation-stopper"),clearTimeout(e),e=setTimeout((()=>{document.body.classList.remove("resize-animation-stopper")}),400)}))})();
+//# sourceMappingURL=resizeStopper.bundle.js.map
