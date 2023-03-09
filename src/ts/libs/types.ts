@@ -38,3 +38,8 @@ export interface ISwiperHardware {
   text: string;
   btn: { more: { text: string; href: string }; buy?: { text: string; href: string } };
 }
+
+export interface IListGame {
+  name: string;
+  background_image: string;
+}

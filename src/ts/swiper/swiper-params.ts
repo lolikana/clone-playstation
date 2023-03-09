@@ -117,9 +117,7 @@ const listGamesParams: SwiperOptions = {
     },
     1024: {
       slidesPerView: 6,
-      spaceBetween: 40,
       grid: {
-        fill: 'row',
         rows: 2
       }
     }

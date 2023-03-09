@@ -1,0 +1,72 @@
+/** Slider List Games Animation START **/
+@keyframes sliderLeftIn {
+  0% {
+    transform: translateX(100%);
+    opacity: $__listGamesSecondOpacity;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: $__listGamesMainOpacity;
+  }
+}
+
+@keyframes sliderLeftOut {
+  0% {
+    transform: translateX(-120%);
+    opacity: $__listGamesMainOpacity;
+  }
+  99% {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+}
+
+@keyframes opacityLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: $__listGamesSecondOpacity;
+  }
+}
+@keyframes sliderRightIn {
+  0% {
+    transform: translateX(0%);
+    opacity: $__listGamesSecondOpacity;
+  }
+  1% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+}
+@keyframes opacityRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-105%);
+    opacity: $__listGamesMainOpacity;
+  }
+}
+@keyframes sliderRightOut {
+  0% {
+    transform: translateX(0%);
+    opacity: $__listGamesMainOpacity;
+  }
+  100% {
+    transform: translateX(105%);
+    opacity: $__listGamesSecondOpacity;
+  }
+}
+/** Slider List Games Animation END **/

@@ -50,7 +50,11 @@ $__underline: underline;
 /***** custom values *****/
 $__transitionAll5: all 500ms ease-in-out;
 $__transitionTransform: transform 350ms ease-out;
-$__transitionInDelay: 500ms;
+$__transitionInDelay500: 500ms;
+
+/***** custom values *****/
+$__listGamesMainOpacity: 1;
+$__listGamesSecondOpacity: 0.4;
 
 /***** custom values *****/
 $__grid__padding__left: 15px;

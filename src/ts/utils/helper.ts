@@ -15,6 +15,6 @@ export const normalizeDate = (date: Date) => {
     currDay = getDate;
   }
   const normalizeDate = `${currYear}-${currMonth}-${currDay}`;
-  console.log(normalizeDate);
+
   return normalizeDate;
 };
