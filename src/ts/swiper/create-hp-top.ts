@@ -6,6 +6,7 @@ const createTopSlide = (data: ISwiperTop) => {
   const picture = document.createElement('picture');
   const sourceLarge = document.createElement('source');
   const sourceMedium = document.createElement('source');
+  const sourceSmall = document.createElement('source');
   const imgTop = document.createElement('img');
   const anchor = document.createElement('a');
 
@@ -22,12 +23,14 @@ const createTopSlide = (data: ISwiperTop) => {
   sourceMedium.media = '(min-width:700px)';
   sourceMedium.srcset = data.img.medium;
 
+  sourceSmall.srcset = data.img.mobile;
+
   imgTop.classList.add('slide-img');
   imgTop.src = data.img.mobile;
   imgTop.alt = `${data.alt} image slide`;
   imgTop.loading = 'lazy';
 
-  picture.append(sourceLarge, sourceMedium, imgTop);
+  picture.append(sourceLarge, sourceMedium, sourceSmall, imgTop);
 
   anchor.classList.add('slide-link');
   anchor.href = '#';
