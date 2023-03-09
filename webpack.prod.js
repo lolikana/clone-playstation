@@ -9,5 +9,8 @@ module.exports = merge(common, {
     static: './dist',
     compress: true,
     port: 4000
+  },
+  output: {
+    clean: true
   }
 });

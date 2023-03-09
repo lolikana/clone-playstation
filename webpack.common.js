@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const DotenvWebpackPlugin = require('dotenv-webpack');
 
 module.exports = {
+  watch: true,
   entry: {
     main: './src/index.ts',
     'js/swiper': './src/ts/swiper.ts',
@@ -14,8 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    assetModuleFilename: 'assets/[hash][ext][query]',
-    clean: true
+    assetModuleFilename: 'assets/[hash][ext][query]'
   },
   plugins: [
     new HtmlWebpackPlugin({
