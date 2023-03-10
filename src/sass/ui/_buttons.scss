@@ -64,9 +64,9 @@
     position: relative;
     background: $__secondary_light;
     &:hover {
-      background: $__secondary_main;
+      background: $__secondary_dark;
       &:after {
-        border: $__secondary_main 2px solid;
+        border: $__secondary_dark 2px solid;
       }
     }
   }
