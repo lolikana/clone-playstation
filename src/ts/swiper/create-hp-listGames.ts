@@ -15,6 +15,7 @@ const createListSlide = ({ name, background_image }: IListGame) => {
 
   div.classList.add('swiper-slide', 'listGames--slide');
   img.src = background_image;
+  img.alt = name;
   figcaption.textContent = name;
 
   figure.append(img, figcaption);
