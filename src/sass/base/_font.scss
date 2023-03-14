@@ -1,11 +1,13 @@
 @font-face {
   font-family: 'sst';
   src: url('../assets/fonts/SSTLight.TTF');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'sst-bold';
   src: url('../assets/fonts/SSTMedium.TTF');
+  font-display: swap;
 }
 
 $__body__font__family: 'sst', Arial, sans-serif;
