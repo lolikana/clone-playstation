@@ -2,6 +2,8 @@
 
 This is a personal project that I created to learn more about Webpack and front-end web development. The project is a clone of the homepage of Playstation website.
 
+Vercel: https://clone-playstation.vercel.app
+
 In addition to creating a visually similar website, I also wanted to include some functionality to make the website dynamic. To achieve this, I used an API to fetch data about games and display them on the website. This allows users to view information about the latest games.
 
 ## Technologies
