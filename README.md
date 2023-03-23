@@ -10,7 +10,7 @@ In addition to creating a visually similar website, I also wanted to include som
 * TypeScript
 * Vanilla JS
 * HTML
-* SASS
+* SCSS
 * Webpack
 * Swiper Library
 
