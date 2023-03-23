@@ -390,7 +390,7 @@ class Accordion {
       }rem`;
     } else {
       this.contentEl.classList.remove('visible');
-      this.contentEl.style.maxHeight = '0';
+      this.contentEl.style.removeProperty('max-height');
     }
   }
 
