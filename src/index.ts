@@ -343,3 +343,73 @@ listGamesBtnRight.addEventListener('click', () => {
 });
 
 /* ----------- List Games Slider END ----------- */
+
+/* ----------- Footer Category Accordion START ----------- */
+class Accordion {
+  rootEl: HTMLElement;
+  buttonEl: HTMLButtonElement;
+  contentEl: HTMLElement;
+  contentElLi: NodeListOf<HTMLElement>;
+  isOpen: boolean;
+  constructor(domNode: HTMLElement) {
+    this.rootEl = domNode;
+    this.buttonEl = this.rootEl.querySelector(
+      '.footer--category-btn'
+    ) as HTMLButtonElement;
+
+    const controlsId = this.buttonEl.getAttribute('aria-controls') as string;
+    this.contentEl = document.getElementById(controlsId) as HTMLElement;
+    this.contentElLi = document.querySelectorAll(
+      `#${this.contentEl.id} > li`
+    ) as NodeListOf<HTMLElement>;
+    this.isOpen = this.buttonEl.getAttribute('aria-expanded') === 'true';
+
+    // add event listeners
+    this.buttonEl.addEventListener('click', this.onButtonClick.bind(this));
+  }
+
+  onButtonClick() {
+    this.toggle(!this.isOpen);
+  }
+
+  toggle(isOpen: boolean) {
+    // don't do anything if the open state doesn't change
+    if (isOpen === this.isOpen) {
+      return;
+    }
+
+    // update the internal state
+    this.isOpen = isOpen;
+
+    // handle DOM updates
+    this.buttonEl.setAttribute('aria-expanded', `${isOpen}`);
+    if (isOpen) {
+      this.contentEl.classList.add('visible');
+      this.contentEl.style.maxHeight = `${
+        this.contentElLi.length + this.contentElLi.length * 0.5
+      }rem`;
+    } else {
+      this.contentEl.classList.remove('visible');
+      this.contentEl.style.maxHeight = '0';
+    }
+  }
+
+  // Add public open and close methods for convenience
+  openAccordion() {
+    this.toggle(true);
+  }
+
+  closeAccordion() {
+    this.toggle(false);
+  }
+}
+
+// init accordions
+const accordions = document.querySelectorAll(
+  '.footer--category'
+) as NodeListOf<HTMLElement>;
+accordions.forEach(accordionEl => {
+  new Accordion(accordionEl);
+});
+
+/* ----------- Footer Category Accordion END ----------- */

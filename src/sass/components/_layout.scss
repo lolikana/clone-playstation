@@ -21,6 +21,80 @@ main {
   margin-bottom: 2rem;
 }
 
+footer {
+  color: $__main;
+  background-color: $__footer;
+  padding: 2rem 2rem;
+}
+
+.footer .border-bottom {
+  border-bottom: 0.5px solid $__main;
+  width: 100%;
+}
+
+.footer--logo img {
+  width: 20rem;
+  padding-bottom: 2rem;
+}
+
+.footer--category-btn {
+  position: relative;
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+
+  h3 {
+    font-size: 0.9rem;
+    font-family: $__body__font__bold_family;
+    font-weight: $__bold;
+  }
+}
+
+.footer--category-icon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  &::after {
+    content: url('../assets/images/icon/close.svg');
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: transform 500ms ease;
+  }
+}
+
+/* Hide the category list by default */
+.footer--category-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 500ms ease;
+}
+
+.footer--category-btn[aria-expanded='true'] .footer--category-icon::after {
+  transform-origin: center;
+  transform: rotate(90deg);
+  transition: transform 500ms ease;
+}
+
+/* Show the category list when the category is open */
+.footer--category-btn[aria-expanded='true'] + .footer--category-list.visible {
+  transition: all 500ms ease;
+  max-height: auto;
+  margin-bottom: 0.75rem;
+}
+
+/* Style the category list items */
+.footer--category-list li {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
 @media only screen and (min-width: 700px) {
   .header--sony {
     height: 2rem;
@@ -33,5 +107,38 @@ main {
       width: fit-content;
       height: 0.75rem;
     }
+  }
+
+  .footer--categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .footer--category-btn {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .footer--category.border-bottom {
+    border: none;
+  }
+  .footer--category-icon {
+    display: none;
+  }
+  .footer--category-list {
+    max-height: fit-content;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .footer--categories {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .footer--category {
+    flex: 1;
   }
 }
