@@ -43,6 +43,3 @@ This project was created by me, <a href="https://github.com/lolikana/">Thomas Gu
 * Swiper library: https://swiperjs.com/
 * RAWG API: https://rawg.io/
 * Playstation website: https://www.playstation.com/
-
-## License
-The project is licensed under the MIT License. Feel free to use it for your own purposes.
