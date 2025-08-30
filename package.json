@@ -29,7 +29,7 @@
     "@typescript-eslint/parser": "^5.48.2",
     "axios": "^1.7.4",
     "css-loader": "^6.7.3",
-    "dotenv-webpack": "^8.0.1",
+    "dotenv-webpack": "^8.1.1",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-formatter-table": "^7.32.1",
