@@ -27,7 +27,7 @@
     "@types/lodash": "^4.17.20",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
-    "axios": "^1.7.4",
+    "axios": "^1.8.2",
     "css-loader": "^6.7.3",
     "dotenv-webpack": "^8.1.1",
     "eslint": "^8.32.0",
